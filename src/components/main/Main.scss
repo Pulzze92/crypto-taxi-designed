@@ -1,0 +1,35 @@
+.main {
+  overflow: hidden;
+  grid-area: mains;
+  margin-top: -92.5vh;
+  height: 100vh;
+  overflow-y: hidden;
+  background-image: url('../../assets/images/bckgd-main.png');
+  z-index: -1;
+  position: absolute;
+  // top: 100vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 40%;
+  background-size: 100%;
+
+  @media (max-width: 1420px) {
+    background-position: 0 10%;
+  }
+
+  .taxi-obj {
+    width: 100vw;
+    height: 40vh;
+    background-image: url('../../assets/images/taxi-main.png');
+    background-size: 40%;
+    position: relative;
+    z-index: 1;
+    top: 58vh;
+    left: 60vw;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,25 @@
+/*SF bold*/
+@font-face {
+  font-family: 'SF Pro bold';
+  src: url('./assets/fonts/SF-Pro-Display-Bold.otf');
+}
+
+/*SF*/
+@font-face {
+  font-family: 'SF Pro italic';
+  src: url('./assets/fonts/SF-Pro-Display-BlackItalic.otf');
+}
+
+.App {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas:
+    'navbars headers'
+    'navbars mains';
+  margin: 0 auto;
+  max-height: 100vh;
+  overflow: hidden;
+
+  .app_content {
+  }
+}

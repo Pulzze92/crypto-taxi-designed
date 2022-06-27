@@ -1,0 +1,142 @@
+.navbar {
+  grid-area: navbars;
+  background-color: #faf1d4;
+  max-width: 100%;
+  width: 20vw;
+  min-height: 100vh;
+  height: 100%;
+  margin-top: -90px;
+
+  @media (max-width: 1040px) {
+    display: none;
+  }
+
+  .logo {
+    padding-top: 5vh;
+    padding-left: 3vw;
+    img {
+      width: 105px;
+      height: 72px;
+
+      @media (max-width: 1565px) {
+        width: 80px;
+      }
+    }
+    svg {
+      width: 136px;
+      height: 71px;
+
+      @media (max-width: 1565px) {
+        width: 90px;
+        margin-left: 2vw;
+      }
+
+      @media (max-width: 1210px) {
+        margin-right: 2vw;
+      }
+    }
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-bottom: 8vh;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 12vh;
+
+    button {
+      font-family: 'SF Pro italic';
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+      color: #1a1a1a;
+      background-color: #2d2d2d;
+      border-radius: 5px;
+      width: 240px;
+      height: 72px;
+      color: #ebc821;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s;
+
+      @media (max-width: 1380px) {
+        font-size: 15px;
+        width: 150px;
+        height: 50px;
+      }
+
+      &:hover {
+        background-color: #e6c3169d;
+        color: #1a1a1a;
+      }
+
+      &:active {
+        background-color: #f6d738;
+        color: #1a1a1a;
+      }
+    }
+  }
+
+  .promo {
+    margin-bottom: 5.5vh;
+    button {
+      font-family: 'SF Pro italic';
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+      color: #1a1a1a;
+      background-color: #2d2d2d;
+      border-radius: 5px;
+      width: 240px;
+      height: 72px;
+      color: #ebc821;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s;
+
+      @media (max-width: 1380px) {
+        font-size: 15px;
+        width: 150px;
+        height: 50px;
+        margin-bottom: 5vh;
+      }
+
+      &:hover {
+        background-color: #e6c3169d;
+        color: #1a1a1a;
+      }
+
+      &:active {
+        background-color: #f6d738;
+        color: #1a1a1a;
+      }
+    }
+  }
+
+  .scroller {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+    margin-left: 2vw;
+    align-items: center;
+    width: 15vw;
+
+    .scroller-menu {
+      background-color: #171213;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+
+      @media (max-width: 1380px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

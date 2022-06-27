@@ -1,0 +1,113 @@
+.header {
+  grid-area: headers;
+  min-width: 100vw;
+  max-height: 90px;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 1);
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 18vw;
+
+  @media (max-width: 1040px) {
+    margin-left: 0;
+  }
+
+  .header_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding-right: 5vw;
+
+    @media (max-width: 1040px) {
+      margin-left: 30vw;
+    }
+
+    @media (max-width: 1000px) {
+      margin-left: 30vw;
+    }
+
+    @media (max-width: 780px) {
+      margin-left: 25vw;
+    }
+
+    @media (max-width: 700px) {
+      margin-left: 20vw;
+    }
+
+    @media (max-width: 630px) {
+      margin-left: 22vw;
+    }
+
+    @media (max-width: 500px) {
+      margin-left: 20vw;
+    }
+
+    .balance {
+      svg {
+        margin-top: 8px;
+      }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      display: flex;
+      gap: 20px;
+
+      .balance_amount {
+        margin-top: 10px;
+        display: flex;
+        gap: 5px;
+        font-family: 'SF Pro bold';
+        font-size: 18px;
+        line-height: 100%;
+        color: #f6d738;
+
+        @media (max-width: 565px) {
+          font-size: 13px;
+        }
+
+        @media (max-width: 442px) {
+          font-size: 10px;
+        }
+      }
+    }
+    .sign_button_container {
+      button {
+        background: #353535;
+        border-radius: 5px;
+        width: 160px;
+        height: 40px;
+        color: #979795;
+        font-family: 'SF Pro italic';
+        font-size: 18px;
+        line-height: 100%;
+        text-transform: uppercase;
+        transition: all 0.5s;
+        &:hover {
+          background-color: #f6d738;
+          cursor: pointer;
+        }
+        &:active {
+          background-color: #806d11;
+        }
+
+        @media (max-width: 630px) {
+          font-size: 14px;
+          width: 90px;
+        }
+
+        @media (max-width: 565px) {
+          font-size: 13px;
+          width: 80px;
+        }
+
+        @media (max-width: 442px) {
+          font-size: 10px;
+          width: 70px;
+        }
+      }
+    }
+  }
+}
