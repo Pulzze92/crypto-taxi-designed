@@ -10,16 +10,25 @@
   src: url('./assets/fonts/SF-Pro-Display-BlackItalic.otf');
 }
 
+@font-face {
+  font-family: 'SF Pro normal';
+  src: url('./assets/fonts/SF-Pro-Rounded-Regular.otf');
+}
+
 .App {
-  display: grid;
   min-height: 100vh;
-  grid-template-areas:
-    'navbars headers'
-    'navbars mains';
+
   margin: 0 auto;
   max-height: 100vh;
   overflow: hidden;
 
+  @media (max-width: 740px) {
+    overflow-x: visible;
+  }
   .app_content {
+    display: grid;
+    grid-template-areas:
+      'navbars headers'
+      'navbars mains';
   }
 }

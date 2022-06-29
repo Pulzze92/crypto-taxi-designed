@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       <div className="app_content">
         <Header className="header" />
-        <Navbar className="navbar" />
         <Main className="main" />
-      </div>{' '}
+        <Navbar className="navbar" />
+      </div>
     </div>
   );
 }

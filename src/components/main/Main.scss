@@ -1,24 +1,128 @@
 .main {
   overflow: hidden;
   grid-area: mains;
-  margin-top: -92.5vh;
+  // margin-top: -92.5vh;
   height: 100vh;
   overflow-y: hidden;
   background-image: url('../../assets/images/bckgd-main.png');
-  z-index: -1;
-  position: absolute;
-  // top: 100vh;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 0 40%;
+  background-position: 0vw 55%;
   background-size: 100%;
 
   @media (max-width: 1420px) {
-    background-position: 0 10%;
+    background-size: 105%;
+    background-position: 0 -20%;
+  }
+
+  @media (max-width: 1380px) {
+    background-position: 0 -30%;
+    background-size: 110%;
+  }
+
+  @media (max-width: 1300px) {
+    background-size: 120%;
+    background-position: 0 0;
+  }
+
+  @media (max-width: 1250px) {
+    background-size: 130%;
+    background-position: 70% 0%;
+  }
+
+  @media (max-width: 1100px) {
+    background-size: 140%;
+  }
+
+  @media (max-width: 1000px) {
+    background-size: 160%;
+    background-position: 70% -20%;
+  }
+
+  @media (max-width: 950px) {
+    background-size: 180%;
+    background-position: 70% 20%;
+  }
+
+  @media (max-width: 900px) {
+    background-size: 180%;
+    background-position: 70% 20%;
+  }
+
+  @media (max-width: 840px) {
+    background-size: 190%;
+    background-position: 70% 20%;
+  }
+
+  @media (max-width: 770px) {
+    background-size: 210%;
+    background-position: 70% 20%;
+  }
+
+  @media (max-width: 750px) {
+    background-size: 220%;
+    background-position: 70% 20%;
+  }
+
+  @media (max-width: 750px) {
+    background-size: 240%;
+    background-position: 70% 20%;
+  }
+
+  @media (max-width: 650px) {
+    background-size: 250%;
+    background-position: 70% 20%;
+  }
+
+  @media (max-width: 610px) {
+    background-size: 260%;
+    background-position: 70% 0%;
+  }
+
+  @media (max-width: 570px) {
+    background-size: 280%;
+    background-position: 70% 0%;
+  }
+
+  @media (max-width: 530px) {
+    background-size: 300%;
+    background-position: 70% 0%;
+  }
+
+  @media (max-width: 500px) {
+    background-size: 320%;
+    background-position: 80% 0%;
+  }
+
+  @media (max-width: 470px) {
+    background-size: 340%;
+    background-position: 80% 0%;
+  }
+
+  @media (max-width: 410px) {
+    background-size: 360%;
+    background-position: 80% 0%;
+  }
+
+  @media (max-width: 410px) {
+    background-size: 380%;
+    background-position: 80% 0%;
+  }
+
+  @media (max-width: 400px) {
+    background-size: 400%;
+    background-position: 80% 0%;
+  }
+
+  @media (max-width: 350px) {
+    background-size: 420%;
+    background-position: 80% 0%;
+  }
+
+  @media (max-width: 330px) {
+    background-size: 440%;
+    background-position: 80% 0%;
   }
 
   .taxi-obj {
@@ -28,8 +132,745 @@
     background-size: 40%;
     position: relative;
     z-index: 1;
-    top: 58vh;
-    left: 60vw;
+    top: 50vh;
+    left: 40vw;
     background-repeat: no-repeat;
+
+    @media (max-width: 1450px) {
+      top: 55vh;
+    }
+
+    @media (max-width: 1300px) {
+      top: 58vh;
+    }
+
+    @media (max-width: 1250px) {
+      top: 60vh;
+    }
+
+    @media (max-width: 1100px) {
+      top: 64vh;
+    }
+
+    @media (max-width: 1040px) {
+      top: 50vh;
+      left: 40vw;
+      background-size: 60%;
+    }
+
+    @media (max-width: 1000px) {
+      top: 52vh;
+      left: 39vw;
+      background-size: 60%;
+    }
+
+    @media (max-width: 950px) {
+      top: 55vh;
+      left: 40vw;
+      background-size: 60%;
+    }
+
+    @media (max-width: 860px) {
+      top: 57vh;
+      left: 40vw;
+      background-size: 60%;
+    }
+
+    @media (max-width: 770px) {
+      top: 61vh;
+      left: 40vw;
+      background-size: 60%;
+    }
+
+    @media (max-width: 680px) {
+      top: 64vh;
+      left: 40vw;
+      background-size: 60%;
+    }
+
+    @media (max-width: 610px) {
+      top: 60vh;
+      left: 20vw;
+      background-size: 80%;
+    }
+
+    @media (max-width: 500px) {
+      top: 65vh;
+      left: 20vw;
+      background-size: 80%;
+    }
+
+    @media (max-width: 410px) {
+      top: 67vh;
+      left: 5vw;
+      background-size: 95%;
+    }
+  }
+
+  .profile-info {
+    position: relative;
+    z-index: 1;
+    background-color: #56493b;
+    max-width: 510px;
+    height: 42vh;
+    width: 100%;
+    left: 5vw;
+    bottom: 30vh;
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: 'SF Pro Italic';
+
+    @media (max-width: 1385px) {
+      max-width: 30vw;
+      max-height: 35vh;
+    }
+
+    @media (max-width: 1290px) {
+      max-width: 26vw;
+      max-height: 30vh;
+      padding: 2px;
+    }
+
+    @media (max-width: 1200px) {
+      max-height: 40vh;
+    }
+
+    @media (max-width: 1175px) {
+      min-height: 47vh;
+    }
+
+    @media (max-width: 1040px) {
+      min-width: 40vw;
+      min-height: 10vh;
+    }
+
+    @media (max-width: 990px) {
+      min-height: 50vh;
+    }
+
+    @media (max-width: 770px) {
+      min-height: 60vh;
+    }
+
+    .ava_id {
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 27px;
+
+      @media (max-width: 1385px) {
+        gap: 15px;
+      }
+
+      @media (max-width: 1290px) {
+        gap: 0px;
+        padding: 32px;
+      }
+
+      @media (max-width: 1290px) {
+        margin-bottom: -2vw;
+      }
+
+      @media (max-width: 1200px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 1040px) {
+        flex-direction: row;
+        gap: 1vw;
+        margin-bottom: 1vh;
+      }
+
+      @media (max-width: 990px) {
+        flex-direction: column;
+      }
+
+      .avatar {
+        width: 102px;
+        height: 102px;
+        background: #d9d9d9;
+        border-radius: 50%;
+
+        @media (max-width: 1385px) {
+          width: 70px;
+          height: 70px;
+        }
+
+        @media (max-width: 1365px) {
+          width: 50px;
+          height: 50px;
+          margin-top: 1vh;
+        }
+
+        @media (max-width: 1290px) {
+          width: 50px;
+          height: 50px;
+          margin-top: 1vh;
+          margin-right: 1vw;
+          margin-left: -1vw;
+        }
+
+        @media (max-width: 1250px) {
+          width: 40px;
+          height: 40px;
+          margin-top: 2vh;
+          margin-right: 1vw;
+          margin-left: -1vw;
+        }
+
+        @media (max-width: 1200px) {
+          align-self: center;
+          width: 60px;
+          height: 60px;
+          margin-top: -1vh;
+          margin-left: 1.3vw;
+        }
+
+        @media (max-width: 1040px) {
+          width: 17%;
+          margin-right: 1vw;
+        }
+
+        @media (max-width: 980px) {
+          min-width: 60px;
+          min-height: 60px;
+        }
+      }
+      .id_addr {
+        color: #ffffff;
+
+        .id {
+          font-family: 'SF Pro Italic';
+          font-size: 24px;
+          line-height: 100%;
+
+          @media (max-width: 1385px) {
+            font-size: 18px;
+          }
+
+          @media (max-width: 335px) {
+            font-size: 12px;
+          }
+        }
+        .address {
+          font-family: 'SF Pro Italic';
+          font-size: 16px;
+          line-height: 100%;
+
+          @media (max-width: 1385px) {
+            font-size: 13px;
+          }
+
+          @media (max-width: 700px) {
+            margin-left: -1vw;
+          }
+
+          @media (max-width: 672px) {
+            margin-left: -2vw;
+          }
+
+          @media (max-width: 630px) {
+            margin-left: -2vw;
+            font-size: 12px;
+          }
+
+          @media (max-width: 600px) {
+            margin-left: -2.5vw;
+          }
+
+          @media (max-width: 575px) {
+            margin-left: calc(-2.5vw + 9%);
+          }
+
+          @media (max-width: 445px) {
+            margin-left: calc(-2.5vw + 3%);
+          }
+
+          @media (max-width: 415px) {
+            margin-left: calc(-2.5vw - 3%);
+          }
+
+          @media (max-width: 385px) {
+            margin-left: calc(-2.5vw - 10%);
+          }
+
+          @media (max-width: 365px) {
+            margin-left: calc(-2.5vw - 16%);
+          }
+
+          @media (max-width: 350px) {
+            margin-left: calc(-2.5vw - 20%);
+          }
+
+          @media (max-width: 335px) {
+            margin-left: calc(-2.5vw - 25%);
+          }
+
+          @media (max-width: 335px) {
+            margin-left: -4vw;
+            font-size: 10px;
+          }
+        }
+      }
+
+      .copy {
+        cursor: pointer;
+        background: #353535;
+        border-radius: 5px;
+        font-family: 'SF Pro Italic';
+        color: #979795;
+        text-align: center;
+        font-size: 16px;
+        line-height: 100%;
+        width: 100px;
+        height: 40px;
+        border: none;
+        margin-top: 5vh;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: #f6d738;
+          color: #1a1a1a;
+        }
+
+        &:active {
+          background-color: black;
+          color: white;
+        }
+
+        @media (max-width: 1385px) {
+          margin-top: 1.7vh;
+          margin-left: 1vw;
+        }
+
+        @media (max-width: 1290px) {
+          font-size: 12px;
+          width: 70px;
+          height: 30px;
+        }
+
+        @media (max-width: 1200px) {
+          align-self: center;
+          margin-right: 1vw;
+          width: 8vw;
+          margin-top: 0vh;
+          margin-bottom: 1vh;
+        }
+
+        @media (max-width: 700px) {
+          min-width: 12vw;
+        }
+
+        @media (max-width: 375px) {
+          min-width: 18vw;
+        }
+      }
+    }
+
+    .amounts_info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      @media (max-width: 1175px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 1040px) {
+        flex-direction: row;
+        margin-bottom: 2vh;
+      }
+
+      @media (max-width: 770px) {
+        flex-direction: column;
+      }
+
+      .district_profit {
+        h3 {
+          font-family: 'SF Pro normal';
+          font-size: 18px;
+          line-height: 100%;
+          color: #f6d738;
+          letter-spacing: 0.15vw;
+          text-transform: uppercase;
+
+          @media (max-width: 1385px) {
+            font-size: 16px;
+          }
+
+          @media (max-width: 1290px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 15px;
+          }
+
+          @media (max-width: 900px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 770px) {
+            font-size: 15px;
+          }
+        }
+
+        h4 {
+          font-family: 'SF Pro italic';
+          font-size: 28px;
+          line-height: 100%;
+
+          @media (max-width: 1385px) {
+            font-size: 16px;
+          }
+
+          @media (max-width: 1290px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 15px;
+          }
+
+          @media (max-width: 900px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 770px) {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .live_sep {
+        width: 5px;
+        height: 9.4vh;
+        background: #f6d738;
+        margin-top: 1.8vh;
+
+        @media (max-width: 1385px) {
+          margin-top: 1.3vh;
+          height: 5vh;
+          margin-left: -2vw;
+          margin-right: -2vw;
+        }
+
+        @media (max-width: 1175px) {
+          display: none;
+        }
+
+        @media (max-width: 1040px) {
+          display: block;
+        }
+
+        @media (max-width: 770px) {
+          display: none;
+        }
+      }
+
+      .referal_payouts {
+        h3 {
+          font-family: 'SF Pro normal';
+          font-size: 18px;
+          line-height: 100%;
+          color: #f2675e;
+          letter-spacing: 0.15vw;
+          text-transform: uppercase;
+
+          @media (max-width: 1385px) {
+            font-size: 16px;
+          }
+
+          @media (max-width: 1290px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 15px;
+          }
+
+          @media (max-width: 900px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 770px) {
+            font-size: 15px;
+          }
+        }
+
+        h4 {
+          font-family: 'SF Pro italic';
+          font-size: 28px;
+          line-height: 100%;
+
+          @media (max-width: 1385px) {
+            font-size: 16px;
+          }
+
+          @media (max-width: 1290px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 15px;
+          }
+
+          @media (max-width: 900px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 770px) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .lets_play {
+      width: 240px;
+      height: 72px;
+      background: #f6d738;
+      box-shadow: 0px 3px 7px rgba(91, 76, 0, 0.5);
+      border-radius: 5px;
+      font-family: 'SF Pro italic';
+      text-align: center;
+      font-size: 24px;
+      line-height: 100%;
+      color: #171213;
+      border: none;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-right: 12vw;
+      margin-top: 1vh;
+      text-transform: uppercase;
+      transition: all 0.5s;
+
+      @media (max-width: 1800px) {
+        width: 10vw;
+        height: 8vh;
+        margin-right: 14vw;
+      }
+
+      @media (max-width: 1640px) {
+        width: 10vw;
+        height: 6vh;
+        margin-right: 16vw;
+      }
+
+      @media (max-width: 1470px) {
+        width: 10vw;
+        height: 6vh;
+        margin-right: 19vw;
+      }
+
+      @media (max-width: 1385px) {
+        width: 10vw;
+        height: 6vh;
+        margin-right: 15vw;
+        font-size: 16px;
+      }
+
+      @media (max-width: 1290px) {
+        width: 8vw;
+        height: 4vh;
+        margin-right: 15vw;
+        font-size: 12px;
+      }
+
+      @media (max-width: 1200px) {
+        margin-left: 2vw;
+      }
+
+      @media (max-width: 1175px) {
+        margin: 2vh auto;
+      }
+
+      @media (max-width: 1040px) {
+        font-size: 15px;
+        width: 13vw;
+      }
+
+      @media (max-width: 725px) {
+        min-width: 120px;
+      }
+
+      @media (max-width: 672px) {
+        width: 15vw;
+      }
+
+      &:hover {
+        background-color: #e6c3169d;
+      }
+
+      &:active {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+
+  .personal_link {
+    width: 350px;
+    height: 306px;
+    border: 2px solid #f6d738;
+    border-radius: 15px;
+    background-color: #7e3f3b;
+    position: relative;
+    bottom: 72vh;
+    left: 50vw;
+    padding: 2.5vw;
+
+    @media (max-width: 1520px) {
+      left: 45vw;
+      padding: 2.3vw;
+    }
+
+    @media (max-width: 1430px) {
+      left: 48vw;
+      padding: 2.3vw;
+    }
+
+    @media (max-width: 1385px) {
+      width: 17vw;
+      height: 28vh;
+      padding: 2.3vw;
+      bottom: 65.5vh;
+    }
+
+    @media (max-width: 1290px) {
+      bottom: 61vh;
+      height: 24vh;
+    }
+
+    @media (max-width: 1200px) {
+      bottom: 70.7vh;
+      height: 24vh;
+    }
+
+    @media (max-width: 1175px) {
+      bottom: 77.5vh;
+    }
+
+    @media (max-width: 1040px) {
+      bottom: 70.6vh;
+      left: 65vw;
+    }
+
+    @media (max-width: 990px) {
+      bottom: 80.6vh;
+      width: 22vw;
+    }
+
+    @media (max-width: 770px) {
+      bottom: 90.6vh;
+      width: 22vw;
+    }
+
+    .stars {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2vw;
+
+      @media (max-width: 1315px) {
+        margin-bottom: 5vh;
+      }
+
+      img {
+        @media (max-width: 766px) {
+          margin-top: 2vh;
+          width: 3vw;
+        }
+      }
+    }
+
+    .title_link {
+      font-family: 'SF Pro italic';
+      text-transform: uppercase;
+      font-size: 36px;
+      line-height: 100%;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 5vh;
+
+      @media (max-width: 1385px) {
+        margin-bottom: 3vh;
+      }
+
+      @media (max-width: 1315px) {
+        font-size: 20px;
+        margin-bottom: 7vh;
+      }
+
+      @media (max-width: 1290px) {
+        margin-bottom: 5vh;
+      }
+
+      @media (max-width: 766px) {
+        font-size: 15px;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 13px;
+      }
+    }
+
+    .copy_link {
+      width: 240px;
+      background: #dd5148;
+      box-shadow: 0px 3px 7px rgba(91, 76, 0, 0.5);
+      border-radius: 5px;
+      height: 72px;
+      font-family: 'SF Pro italic';
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s;
+
+      @media (max-width: 1385px) {
+        font-size: 16px;
+        width: 10vw;
+        height: 6vh;
+      }
+
+      @media (max-width: 1290px) {
+        font-size: 12px;
+        width: 8vw;
+        height: 4vh;
+      }
+
+      @media (max-width: 957px) {
+        min-width: 10vw;
+      }
+
+      @media (max-width: 766px) {
+        min-width: 13vw;
+      }
+
+      @media (max-width: 600px) {
+        min-width: 17vw;
+      }
+
+      @media (max-width: 450px) {
+        min-width: 20vw;
+      }
+
+      @media (max-width: 382px) {
+        min-width: 22vw;
+      }
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+
+      &:active {
+        background-color: #56493b;
+        color: white;
+      }
+    }
   }
 }

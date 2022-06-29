@@ -5,7 +5,6 @@
   width: 20vw;
   min-height: 100vh;
   height: 100%;
-  margin-top: -90px;
 
   @media (max-width: 1040px) {
     display: none;
@@ -66,8 +65,8 @@
 
       @media (max-width: 1380px) {
         font-size: 15px;
-        width: 150px;
-        height: 50px;
+        width: 200px;
+        height: 60px;
       }
 
       &:hover {
@@ -76,8 +75,8 @@
       }
 
       &:active {
-        background-color: #f6d738;
-        color: #1a1a1a;
+        background-color: black;
+        color: white;
       }
     }
   }
@@ -101,8 +100,8 @@
 
       @media (max-width: 1380px) {
         font-size: 15px;
-        width: 150px;
-        height: 50px;
+        width: 200px;
+        height: 60px;
         margin-bottom: 5vh;
       }
 
@@ -112,8 +111,8 @@
       }
 
       &:active {
-        background-color: #f6d738;
-        color: #1a1a1a;
+        background-color: black;
+        color: white;
       }
     }
   }
