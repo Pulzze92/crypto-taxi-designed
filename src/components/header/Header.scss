@@ -2,6 +2,7 @@
   grid-area: headers;
   min-width: 100vw;
   min-height: 90px;
+  max-height: 90px;
   height: 100%;
   background-color: rgba(26, 26, 26, 1);
   background-size: cover;
@@ -21,6 +22,14 @@
     padding-right: 10vw;
 
     .burger {
+      svg {
+        transition: all 0.5s;
+      }
+      svg:hover {
+        fill: #f6d738;
+        transform: scale(1.2);
+      }
+
       display: none;
 
       @media (max-width: 1040px) {
@@ -32,6 +41,10 @@
       @media (max-width: 740px) {
         left: 2vw;
       }
+    }
+
+    .burger-inactive {
+      display: none;
     }
 
     @media (max-width: 1040px) {
@@ -196,6 +209,7 @@
         line-height: 100%;
         text-transform: uppercase;
         transition: all 0.5s;
+        border: none;
         &:hover {
           background-color: #f6d738;
           cursor: pointer;

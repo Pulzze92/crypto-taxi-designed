@@ -2,14 +2,15 @@ import React from 'react';
 
 import styles from './Header.scss';
 
-const Header = () => {
+const Header = ({ clickedBurger, setClickedBurger }) => {
   const [balance, setBalance] = React.useState(0.0391);
 
   return (
     <div className="header">
       <div className="header_content">
-        <div className="burger">
+        <div className={clickedBurger ? 'burger-inactive' : 'burger'}>
           <svg
+            onClick={() => setClickedBurger(true)}
             xmlns="http://www.w3.org/2000/svg"
             width="40"
             height="40"

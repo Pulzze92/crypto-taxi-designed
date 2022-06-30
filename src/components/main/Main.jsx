@@ -20,18 +20,23 @@ const Main = () => {
           </div>
           <button className="copy">Copy</button>
         </div>
+        <div className="pers_stat">
+          <h4 className="invited">Was invited 01.05.2022</h4>
+          <h4 className="ref_id">by ID 2331</h4>
+        </div>
         <div className="amounts_info">
           <div className="district_profit">
             <h3>District profit:</h3>
             <h4>10000 BNB</h4>
+            <button className="lets_play">Let's play</button>
           </div>
           <div className="live_sep"></div>
           <div className="referal_payouts">
             <h3>Referal payouts:</h3>
             <h4>10000 BNB</h4>
+            <button className="check_stats">Check stats</button>
           </div>
         </div>
-        <button className="lets_play">Let's play</button>
       </div>
       <div className="personal_link">
         <div className="stars">

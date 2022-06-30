@@ -40,6 +40,10 @@
     background-position: 70% -20%;
   }
 
+  @media (max-width: 1040px) {
+    overflow: hidden;
+  }
+
   @media (max-width: 950px) {
     background-size: 180%;
     background-position: 70% 20%;
@@ -210,9 +214,10 @@
   .profile-info {
     position: relative;
     z-index: 1;
-    background-color: #56493b;
+    background-color: #37486a;
     max-width: 510px;
-    height: 42vh;
+    height: 43.7vh;
+    border: 2px solid #f6d738;
     width: 100%;
     left: 5vw;
     bottom: 30vh;
@@ -220,36 +225,50 @@
     color: #ffffff;
     font-family: 'SF Pro Italic';
 
+    @media (min-width: 2000px) {
+      width: 30%;
+      height: 40%;
+    }
+
+    @media (max-width: 2000px) {
+      width: 30%;
+      height: 45.5%;
+    }
+
     @media (max-width: 1385px) {
-      max-width: 30vw;
-      max-height: 35vh;
+      width: 30vw;
+      height: 35vh;
     }
 
     @media (max-width: 1290px) {
-      max-width: 26vw;
-      max-height: 30vh;
+      width: 26vw;
+      height: 31vh;
       padding: 2px;
     }
 
     @media (max-width: 1200px) {
-      max-height: 40vh;
+      height: 41vh;
     }
 
     @media (max-width: 1175px) {
-      min-height: 47vh;
+      height: 41vh;
     }
 
     @media (max-width: 1040px) {
-      min-width: 40vw;
-      min-height: 10vh;
+      width: 40vw;
+      height: 32vh;
     }
 
     @media (max-width: 990px) {
-      min-height: 50vh;
+      height: 44.3vh;
     }
 
     @media (max-width: 770px) {
-      min-height: 60vh;
+      height: 59.5vh;
+    }
+
+    @media (max-width: 550px) {
+      height: 63.8vh;
     }
 
     .ava_id {
@@ -257,6 +276,10 @@
       display: flex;
       flex-direction: row;
       gap: 27px;
+
+      @media (min-width: 2000px) {
+        gap: 4vw;
+      }
 
       @media (max-width: 1385px) {
         gap: 15px;
@@ -289,11 +312,19 @@
         width: 102px;
         height: 102px;
         background: #d9d9d9;
+        background-image: url('../../assets/images/394055-PCQ283-320\ 1.png');
         border-radius: 50%;
+
+        @media (min-width: 2000px) {
+          width: 10vw;
+          height: 7vh;
+          background-size: 110%;
+        }
 
         @media (max-width: 1385px) {
           width: 70px;
           height: 70px;
+          background-size: 100%;
         }
 
         @media (max-width: 1365px) {
@@ -318,12 +349,17 @@
           margin-left: -1vw;
         }
 
+        @media (max-width: 1250px) {
+          background-size: 108%;
+        }
+
         @media (max-width: 1200px) {
           align-self: center;
           width: 60px;
           height: 60px;
           margin-top: -1vh;
           margin-left: 1.3vw;
+          background-size: 100%;
         }
 
         @media (max-width: 1040px) {
@@ -340,12 +376,17 @@
         color: #ffffff;
 
         .id {
+          margin-left: -4vw;
           font-family: 'SF Pro Italic';
           font-size: 24px;
           line-height: 100%;
 
           @media (max-width: 1385px) {
             font-size: 18px;
+          }
+
+          @media (max-width: 1200px) {
+            margin-left: 0vw;
           }
 
           @media (max-width: 335px) {
@@ -467,14 +508,48 @@
       }
     }
 
+    .pers_stat {
+      display: flex;
+      flex-direction: row;
+      gap: 5vw;
+      margin-top: -1.9vh;
+      margin-left: 7vw;
+
+      @media (max-width: 1290px) {
+        margin-top: -5vh;
+        margin-bottom: 2vh;
+      }
+
+      @media (max-width: 1200px) {
+        margin-left: -3vw;
+        justify-content: center;
+      }
+
+      @media (max-width: 550px) {
+        flex-direction: column;
+        gap: 0px;
+      }
+
+      h4 {
+        font-family: 'SF Pro normal';
+        font-size: 15px;
+        line-height: 100%;
+        color: #8991a3;
+
+        @media (max-width: 1290px) {
+          font-size: 12px;
+        }
+
+        @media (max-width: 1280px) {
+          margin-right: -2vw;
+        }
+      }
+    }
+
     .amounts_info {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-
-      @media (max-width: 1175px) {
-        flex-direction: column;
-      }
 
       @media (max-width: 1040px) {
         flex-direction: row;
@@ -483,9 +558,68 @@
 
       @media (max-width: 770px) {
         flex-direction: column;
+        padding-bottom: 1vh;
       }
 
       .district_profit {
+        background-color: #293a5c;
+        width: 13vw;
+        border-radius: 0 0 0 15px;
+
+        @media (min-width: 1580px) {
+          max-width: 16vw;
+          max-height: 23.4vh;
+        }
+
+        @media (max-width: 1800px) {
+          width: 14vw;
+
+          @media (max-width: 1700px) {
+            width: calc(14vw + 5%);
+          }
+
+          @media (max-width: 1640px) {
+            width: 45%;
+          }
+
+          @media (max-width: 1580px) {
+            height: 23.5vh;
+          }
+
+          @media (max-width: 1540px) {
+            width: calc(14vw + 5.6%);
+          }
+
+          @media (max-width: 1500px) {
+            width: calc(14vw + 6.6%);
+          }
+
+          @media (max-width: 1460px) {
+            width: calc(14vw + 7.6%);
+          }
+
+          @media (max-width: 1445px) {
+            width: calc(15vw + 5%);
+          }
+
+          @media (max-width: 1385px) {
+            width: calc(13vw + 5%);
+            height: 18vh;
+          }
+
+          @media (max-width: 1290px) {
+            height: 14vh;
+          }
+
+          @media (max-width: 1040px) {
+            width: 22vw;
+          }
+
+          @media (max-width: 770px) {
+            width: 100%;
+            border-radius: 0 0 0 0;
+          }
+        }
         h3 {
           font-family: 'SF Pro normal';
           font-size: 18px;
@@ -494,12 +628,17 @@
           letter-spacing: 0.15vw;
           text-transform: uppercase;
 
+          @media (max-width: 1900px) {
+            margin-left: 0px;
+          }
+
           @media (max-width: 1385px) {
             font-size: 16px;
           }
 
           @media (max-width: 1290px) {
             font-size: 12px;
+            margin-bottom: 2vh;
           }
 
           @media (max-width: 1040px) {
@@ -512,6 +651,10 @@
 
           @media (max-width: 770px) {
             font-size: 15px;
+          }
+
+          @media (max-width: 370px) {
+            font-size: 12px;
           }
         }
 
@@ -522,10 +665,12 @@
 
           @media (max-width: 1385px) {
             font-size: 16px;
+            margin-bottom: 1vh;
           }
 
           @media (max-width: 1290px) {
             font-size: 12px;
+            margin-bottom: 1vh;
           }
 
           @media (max-width: 1040px) {
@@ -539,13 +684,107 @@
           @media (max-width: 770px) {
             font-size: 15px;
           }
+
+          @media (max-width: 370px) {
+            font-size: 12px;
+          }
+        }
+
+        .lets_play {
+          width: 200px;
+          height: 65px;
+          background: #f6d738;
+          box-shadow: 0px 3px 7px rgba(91, 76, 0, 0.5);
+          border-radius: 5px;
+          font-family: 'SF Pro italic';
+          text-align: center;
+          font-size: 24px;
+          line-height: 100%;
+          color: #171213;
+          border: none;
+          cursor: pointer;
+          margin-top: 1vh;
+          margin-bottom: 3vh;
+          text-transform: uppercase;
+          transition: all 0.5s;
+
+          @media (max-width: 1800px) {
+            width: 10vw;
+            height: 6vh;
+            font-size: 20px;
+          }
+
+          @media (max-width: 1640px) {
+            width: 10vw;
+            height: 6vh;
+          }
+
+          @media (max-width: 1640px) {
+            font-size: 18px;
+          }
+
+          @media (max-width: 1470px) {
+            width: 10vw;
+            height: 6vh;
+          }
+
+          @media (max-width: 1385px) {
+            width: 10vw;
+            height: 6vh;
+            font-size: 16px;
+          }
+
+          @media (max-width: 1290px) {
+            width: 8vw;
+            height: 4vh;
+            font-size: 12px;
+          }
+
+          @media (max-width: 1200px) {
+            font-size: 11px;
+          }
+
+          @media (max-width: 1110px) {
+            font-size: 10px;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 15px;
+            width: 13vw;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 725px) {
+            width: 120px;
+          }
+
+          @media (max-width: 672px) {
+            width: 15vw;
+          }
+
+          @media (max-width: 370px) {
+            font-size: 11px;
+            width: 25vw;
+          }
+
+          &:hover {
+            background-color: #e6c3169d;
+          }
+
+          &:active {
+            background-color: black;
+            color: white;
+          }
         }
       }
 
       .live_sep {
         width: 5px;
         height: 9.4vh;
-        background: #f6d738;
+        margin: 0 0.1vw;
         margin-top: 1.8vh;
 
         @media (max-width: 1385px) {
@@ -555,12 +794,30 @@
           margin-right: -2vw;
         }
 
-        @media (max-width: 1175px) {
-          display: none;
+        @media (max-width: 1870px) {
+          margin: 0 0.5vw;
+        }
+
+        @media (max-width: 1810px) {
+          margin: 0 0.5vw;
+        }
+
+        @media (max-width: 1630px) {
+          margin: 0;
+          width: 0vw;
+        }
+
+        @media (max-width: 1445px) {
+          margin: 5px;
+        }
+
+        @media (max-width: 1052px) {
+          margin: 0;
         }
 
         @media (max-width: 1040px) {
           display: block;
+          margin: 0 -2vw;
         }
 
         @media (max-width: 770px) {
@@ -569,6 +826,169 @@
       }
 
       .referal_payouts {
+        background-color: #293a5c;
+        width: 13vw;
+        border-radius: 0 0 15px 0;
+
+        @media (min-width: 1580px) {
+          max-width: 16vw;
+          max-height: 23.4vh;
+        }
+
+        @media (max-width: 1800px) {
+          width: 14vw;
+        }
+
+        @media (max-width: 1700px) {
+          width: calc(14vw + 5%);
+        }
+
+        @media (max-width: 1640px) {
+          width: 45%;
+        }
+
+        @media (max-width: 1580px) {
+          height: 23.5vh;
+        }
+
+        @media (max-width: 1540px) {
+          width: calc(14vw + 5.6%);
+        }
+
+        @media (max-width: 1500px) {
+          width: calc(14vw + 6.6%);
+        }
+
+        @media (max-width: 1460px) {
+          width: calc(14vw + 7.6%);
+        }
+
+        @media (max-width: 1445px) {
+          width: calc(15vw + 5%);
+        }
+
+        @media (max-width: 1445px) {
+          width: calc(15vw + 5%);
+        }
+
+        @media (max-width: 1385px) {
+          width: calc(13vw + 5%);
+          height: 18vh;
+        }
+
+        @media (max-width: 1290px) {
+          height: 14vh;
+        }
+
+        @media (max-width: 1040px) {
+          width: 22vw;
+        }
+
+        @media (max-width: 770px) {
+          width: 100%;
+          border-radius: 0 0 15px 15px;
+          padding-bottom: 2vh;
+        }
+
+        .check_stats {
+          width: 200px;
+          height: 65px;
+
+          background: #dd5148;
+          box-shadow: 0px 3px 7px rgba(91, 76, 0, 0.5);
+          border-radius: 5px;
+          font-family: 'SF Pro italic';
+          text-align: center;
+          font-size: 24px;
+          line-height: 100%;
+          color: #ffffff;
+          border: none;
+          cursor: pointer;
+          margin-top: 1vh;
+          margin-bottom: 3vh;
+          text-transform: uppercase;
+          transition: all 0.5s;
+
+          @media (max-width: 1900px) {
+            margin-right: 0px;
+          }
+
+          @media (max-width: 1800px) {
+            width: 10vw;
+            height: 6vh;
+            font-size: 20px;
+          }
+
+          @media (max-width: 1660px) {
+            width: 10vw;
+            height: 6vh;
+          }
+
+          @media (max-width: 1640px) {
+            width: 10vw;
+            height: 6vh;
+          }
+
+          @media (max-width: 1640px) {
+            font-size: 18px;
+          }
+
+          @media (max-width: 1470px) {
+            width: 10vw;
+            height: 6vh;
+          }
+
+          @media (max-width: 1385px) {
+            width: 10vw;
+            height: 6vh;
+            font-size: 16px;
+          }
+
+          @media (max-width: 1290px) {
+            width: 8vw;
+            height: 4vh;
+            font-size: 12px;
+          }
+
+          @media (max-width: 1200px) {
+            font-size: 11px;
+          }
+
+          @media (max-width: 1110px) {
+            font-size: 10px;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 15px;
+            width: 13vw;
+          }
+
+          @media (max-width: 1040px) {
+            font-size: 12px;
+          }
+
+          @media (max-width: 725px) {
+            width: 120px;
+          }
+
+          @media (max-width: 672px) {
+            width: 15vw;
+          }
+
+          @media (max-width: 370px) {
+            font-size: 11px;
+            width: 25vw;
+          }
+
+          &:hover {
+            background-color: #e6c3169d;
+          }
+
+          &:active {
+            background-color: black;
+            color: white;
+          }
+        }
         h3 {
           font-family: 'SF Pro normal';
           font-size: 18px;
@@ -583,6 +1003,7 @@
 
           @media (max-width: 1290px) {
             font-size: 12px;
+            margin-bottom: 2vh;
           }
 
           @media (max-width: 1040px) {
@@ -595,6 +1016,10 @@
 
           @media (max-width: 770px) {
             font-size: 15px;
+          }
+
+          @media (max-width: 370px) {
+            font-size: 12px;
           }
         }
 
@@ -605,10 +1030,12 @@
 
           @media (max-width: 1385px) {
             font-size: 16px;
+            margin-bottom: 1vh;
           }
 
           @media (max-width: 1290px) {
             font-size: 12px;
+            margin-bottom: 1vh;
           }
 
           @media (max-width: 1040px) {
@@ -622,89 +1049,11 @@
           @media (max-width: 770px) {
             font-size: 15px;
           }
+
+          @media (max-width: 370px) {
+            font-size: 12px;
+          }
         }
-      }
-    }
-
-    .lets_play {
-      width: 240px;
-      height: 72px;
-      background: #f6d738;
-      box-shadow: 0px 3px 7px rgba(91, 76, 0, 0.5);
-      border-radius: 5px;
-      font-family: 'SF Pro italic';
-      text-align: center;
-      font-size: 24px;
-      line-height: 100%;
-      color: #171213;
-      border: none;
-      cursor: pointer;
-      align-self: flex-start;
-      margin-right: 12vw;
-      margin-top: 1vh;
-      text-transform: uppercase;
-      transition: all 0.5s;
-
-      @media (max-width: 1800px) {
-        width: 10vw;
-        height: 8vh;
-        margin-right: 14vw;
-      }
-
-      @media (max-width: 1640px) {
-        width: 10vw;
-        height: 6vh;
-        margin-right: 16vw;
-      }
-
-      @media (max-width: 1470px) {
-        width: 10vw;
-        height: 6vh;
-        margin-right: 19vw;
-      }
-
-      @media (max-width: 1385px) {
-        width: 10vw;
-        height: 6vh;
-        margin-right: 15vw;
-        font-size: 16px;
-      }
-
-      @media (max-width: 1290px) {
-        width: 8vw;
-        height: 4vh;
-        margin-right: 15vw;
-        font-size: 12px;
-      }
-
-      @media (max-width: 1200px) {
-        margin-left: 2vw;
-      }
-
-      @media (max-width: 1175px) {
-        margin: 2vh auto;
-      }
-
-      @media (max-width: 1040px) {
-        font-size: 15px;
-        width: 13vw;
-      }
-
-      @media (max-width: 725px) {
-        min-width: 120px;
-      }
-
-      @media (max-width: 672px) {
-        width: 15vw;
-      }
-
-      &:hover {
-        background-color: #e6c3169d;
-      }
-
-      &:active {
-        background-color: black;
-        color: white;
       }
     }
   }
