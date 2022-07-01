@@ -28,8 +28,9 @@
   .app_content {
     display: grid;
     grid-template-areas:
-      'navbars headers'
-      'navbars mains';
+      'navbars headers headers'
+      'navbars mains mains'
+      'navbars mains mains';
   }
 
   a {
