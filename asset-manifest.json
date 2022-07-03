@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/crypto-taxi-designed/static/css/main.516cb573.css",
+    "main.js": "/crypto-taxi-designed/static/js/main.50444c6c.js",
+    "static/media/SF-Pro-Display-Bold.otf": "/crypto-taxi-designed/static/media/SF-Pro-Display-Bold.170e68ac3f4c79ef407d.otf",
+    "static/media/SF-Pro-Rounded-Regular.otf": "/crypto-taxi-designed/static/media/SF-Pro-Rounded-Regular.72faf94d6d363c4e94a2.otf",
+    "static/media/SF-Pro-Display-BlackItalic.otf": "/crypto-taxi-designed/static/media/SF-Pro-Display-BlackItalic.7b69e32fa273f5170702.otf",
+    "static/media/login_bckgd.png": "/crypto-taxi-designed/static/media/login_bckgd.9ff46db3478027f5802a.png",
+    "static/media/bckgd-main.png": "/crypto-taxi-designed/static/media/bckgd-main.a0103b40503a6f40838e.png",
+    "static/media/district_bckgd.png": "/crypto-taxi-designed/static/media/district_bckgd.2eee647d93525828f051.png",
+    "static/media/taxi-main.png": "/crypto-taxi-designed/static/media/taxi-main.841dd00d0b92ab026b8b.png",
+    "static/media/taxi_district.png": "/crypto-taxi-designed/static/media/taxi_district.1ed6b7f58c0bdc652583.png",
+    "static/media/logo.svg": "/crypto-taxi-designed/static/media/logo.02acf5f4d3fc36f2d296c5feecf04fcd.svg",
+    "static/media/star.svg": "/crypto-taxi-designed/static/media/star.77ddd00c244f800f90b4aa649e191c87.svg",
+    "index.html": "/crypto-taxi-designed/index.html",
+    "main.516cb573.css.map": "/crypto-taxi-designed/static/css/main.516cb573.css.map",
+    "main.50444c6c.js.map": "/crypto-taxi-designed/static/js/main.50444c6c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.516cb573.css",
+    "static/js/main.50444c6c.js"
+  ]
+}
