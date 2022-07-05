@@ -1,8 +1,10 @@
 {
+  "homepage": "https://pulzze92.github.io/crypto-taxi-designed/",
   "name": "crypto-taxi-designed",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -18,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +49,7 @@
     "chai": "^4.3.6",
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.6.9",
+    "gh-pages": "^4.0.0",
     "hardhat": "^2.9.9",
     "sass": "^1.53.0"
   }

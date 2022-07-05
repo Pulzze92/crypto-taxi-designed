@@ -155,6 +155,10 @@
     background-position: 0 -5%;
   }
 
+  @media (max-height: 700px) {
+    margin-left: -3px;
+  }
+
   .levels {
     display: inline-grid;
     grid-template-columns: repeat(5, 1fr);
@@ -402,6 +406,11 @@
       width: 14rem;
       height: 13rem;
       margin: 3rem auto;
+    }
+
+    @media (max-height: 700px) {
+      margin-top: -10px;
+      margin-bottom: 20px;
     }
 
     .priceSide {
