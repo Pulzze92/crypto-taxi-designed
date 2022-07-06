@@ -30,6 +30,8 @@ const District = () => {
       lvlPrice.push(+i._hex.toString(10) / 1000000000000000000);
     }
 
+    console.log(lvlPrice);
+
     setLevelPriceInfo(lvlPrice);
   };
 
@@ -43,7 +45,7 @@ const District = () => {
         <div className="levels">
           {levels.map((el, i) => {
             return (
-              <div className="level" key={i} onClick={() => setClickedLvl(el)}>
+              <div className="level" key={i} onClick={() => handleSubmit()}>
                 <span>{el}</span>
               </div>
             );
