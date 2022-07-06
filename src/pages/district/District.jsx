@@ -4,7 +4,6 @@ import styles from "./District.scss";
 import taxi from "../../assets/images/taxi_district.png";
 import sign from "../../assets/images/sign_district.png";
 
-import { ethers } from "ethers";
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
 const levels = [

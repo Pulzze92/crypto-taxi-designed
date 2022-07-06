@@ -9,7 +9,6 @@ import Navbar from "./components/navbar/Navbar";
 import Main from "./components/main/Main";
 import District from "./pages/district/District";
 
-import { ethers } from "ethers";
 import CryptoTaxiAbi from "./CryptoTaxi.json";
 
 function App() {
