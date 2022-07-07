@@ -44,7 +44,7 @@ function App() {
             path="/"
             element={<Login unLogged={unLogged} setUnlogged={setUnlogged} />}
           />
-          <Route path={"/main"} element={<Main />} />
+          <Route path={"/main"} element={<Main unLogged={unLogged}/>} />
           <Route path="/district" element={<District />} />
         </Routes>
       </div>

@@ -7,7 +7,44 @@ import star from '../../assets/svg/star.svg';
 import bckgd from '../../assets/images/bckgd-main.png';
 import taxiImg from '../../assets/images/taxi-main.png';
 
-const Main = () => {
+const Main = ({unLogged}) => {
+  const [defaultAccount, setDefaultAccount] = React.useState(null);
+  const [copyActive, setCopyActive] = React.useState(false);
+
+  const [seconds, setSeconds] = React.useState(1);
+  const [ timerActive, setTimerActive ] = React.useState(false);
+
+  React.useEffect(() => {
+    if (seconds > 0 && timerActive) {
+      setTimeout(setSeconds, 1000, seconds - 1);
+    } else {
+      setTimerActive(false);
+    }
+  }, [timerActive, seconds]);
+
+  let showWallet;
+
+  const checkWalletAddress = () => {
+    if(window.ethereum) {
+      window.ethereum.request({method: 'eth_requestAccounts'})
+      .then(res => accountChangedHandler(res[0]));
+    }
+  }
+
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+  }
+
+  React.useEffect(() => {
+    checkWalletAddress();
+  }, defaultAccount);
+
+  if(window.ethereum && defaultAccount) {
+    showWallet = defaultAccount.slice(0, 7).concat('...').concat(defaultAccount.slice(-9))
+  } else {
+    showWallet = 'Wallet is not connected';
+  }
+
   return (
     <div className="main">
       <div className="taxi-obj"></div>
@@ -16,9 +53,23 @@ const Main = () => {
           <div className="avatar"></div>
           <div className="id_addr">
             <h2 className="id">ID 2423</h2>
-            <h3 className="address">5nfask3...fka5e23ko</h3>
+            <h3 className="address">{showWallet}</h3>
           </div>
-          <button className="copy">Copy</button>
+          {
+            !unLogged ? 
+            (<button className="copy" onClick={() => {
+              navigator.clipboard.writeText(defaultAccount);
+              setCopyActive(true);
+              setTimerActive(!timerActive);
+            }}>Copy</button>) 
+            :
+            (<button className="copy-inactive" disabled>Copy</button>)
+          }
+          {copyActive && (
+            <div className={timerActive ? 'popCopied' : 'popDisptd'}>
+              The wallet address is copied!
+            </div>
+          )}          
         </div>
         <div className="pers_stat">
           <h4 className="invited">Was invited 01.05.2022</h4>
