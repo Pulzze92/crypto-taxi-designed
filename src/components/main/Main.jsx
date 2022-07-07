@@ -11,10 +11,11 @@ const Main = ({unLogged}) => {
   const [defaultAccount, setDefaultAccount] = React.useState(null);
   const [copyActive, setCopyActive] = React.useState(false);
 
-  const [seconds, setSeconds] = React.useState(1);
+  const [seconds, setSeconds] = React.useState(2);
   const [ timerActive, setTimerActive ] = React.useState(false);
 
   React.useEffect(() => {
+    
     if (seconds > 0 && timerActive) {
       setTimeout(setSeconds, 1000, seconds - 1);
     } else {

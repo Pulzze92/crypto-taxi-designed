@@ -595,10 +595,22 @@
         font-size: 12px;
         left: 17vw;
         top: 13vh;
+        z-index: 3;
       }
 
       .popDisptd {
-        display: none;
+        position: absolute;
+        width: 150px;
+        border: 2px solid black;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(91, 76, 0, 0.4);
+        font-size: 12px;
+        left: 17vw;
+        top: 13vh;
+        z-index: 3;
+        opacity: 0;
+        transition: all 3s;
       }
 
       .copy-inactive {
