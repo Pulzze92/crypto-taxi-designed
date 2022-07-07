@@ -1,40 +1,49 @@
 import React from 'react';
 import { ethers } from 'ethers';
 
-import { DAppProvider, useEtherBalance, useEthers, Config, useContractFunction } from '@usedapp/core'
-import { formatEther } from '@ethersproject/units'
-import { getDefaultProvider } from 'ethers';
-
 import styles from './Header.scss';
 
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
 
 
-const Header = ({ clickedBurger, setClickedBurger, unLogged, setUnlogged, deactivate}) => {
-  const { activateBrowserWallet, account } = useEthers();
-  const [hasMetamask, setHasMetamask] = React.useState(false);
-  const etherBalance = useEtherBalance(account);
+const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged, deactivate}) => {
+  const [errorMessage, setErrorMessage] = React.useState(null);
+  const [defaultAccount, setDefaultAccount] = React.useState(null);
+  const [userBalance, setUserBalance] = React.useState(null);
 
-  React.useEffect(() => {
-    if (typeof window.ethereum !== "undefined") {
-      setHasMetamask(true);
+  const connectWalletHandler = () => {
+    if(window.ethereum) {
+      window.ethereum.request({method: 'eth_requestAccounts'})
+        .then(result => {
+          accountChangedHandler(result[0]);
+        })
+    } else {
+      setErrorMessage('Install Metamask');
     }
-  });
-
-  async function connect() {
-    await activateBrowserWallet();
   }
+
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    getUserBalance(newAccount.toString());
+  }
+
+  const getUserBalance = (address) => {
+    window.ethereum.request({method: 'eth_getBalance', params: [address, 'latest']})
+      .then(balance => {
+        setUserBalance(ethers.utils.formatEther(balance).slice(0,5));
+      })
+  }
+
+  const chainChangedHandler = () => {
+    window.location.reload();
+  }
+
+  window.ethereum.on('accountsChanged', accountChangedHandler);
+  window.ethereum.on('chainChanged', chainChangedHandler);
+
   const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
   const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
-
-  const { send, state } = useContractFunction(contract, "store", {
-    transactionName: "store",
-  });
-
-  React.useEffect(() => {
-    console.log(`State: ${state.status}`);
-  }, [state]);
 
   return (
     <div className="header">
@@ -63,24 +72,21 @@ const Header = ({ clickedBurger, setClickedBurger, unLogged, setUnlogged, deacti
 
             <div className="balance_amount">
               <span>Balance:</span>
-              {etherBalance && (
-                <span className="balance_amount-sum">{formatEther(etherBalance)}</span>
-              )}
+                <span className="balance_amount-sum">{userBalance}</span>
               <span className="balance_amount-currency">BNB</span>
             </div>
           </div>
         )}
         <div className={unLogged ? 'sign_button_container' : 'out_button_container'}>
-          {hasMetamask ? (
-            account ? (
-              setUnlogged(false)
-            ) : (
-          <button onClick={() => {
-            activateBrowserWallet();
-            setUnlogged(false);
-          }}>Sign in</button>
-          )) : (setUnlogged(true))}
+          {
+            unLogged ? (<button onClick={() => {
+              setUnlogged(false);
+              connectWalletHandler();
+            }}>sign in</button>) : (<button onClick={() => {
+              setUnlogged(true);
 
+            }}>sign out</button>)
+          }
           
         </div>
       </div>
