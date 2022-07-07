@@ -12,9 +12,15 @@ import District from "./pages/district/District";
 import { ethers } from "ethers";
 import CryptoTaxiAbi from "./CryptoTaxi.json";
 
+import { useEthers} from '@usedapp/core';
+
+
 function App() {
   const [clickedBurger, setClickedBurger] = React.useState(false);
-  const [unLogged, setUnlogged] = React.useState(false);
+  const [unLogged, setUnlogged] = React.useState(true);
+  const [accounts, setAccounts] = React.useState([]);
+
+  const { account, deactivate } = useEthers();
 
   return (
     <div className="App">
@@ -24,10 +30,14 @@ function App() {
           setClickedBurger={setClickedBurger}
           setUnlogged={setUnlogged}
           unLogged={unLogged}
+          account={account}
+          deactivate={deactivate}
         />
         <Navbar
           clickedBurger={clickedBurger}
           setClickedBurger={setClickedBurger}
+          unLogged={unLogged}
+          setUnlogged={setUnlogged}
         />
         <Routes>
           <Route

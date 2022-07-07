@@ -5,8 +5,8 @@ import logo from '../../assets/svg/logo.svg';
 
 import styles from './Navbar.scss';
 
-const Navbar = ({ clickedBurger, setClickedBurger }) => {
-  console.log(clickedBurger);
+const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogged }) => {
+
   return (
     <div className={clickedBurger ? 'navbar-active' : 'navbar'}>
       <div className="blur">
@@ -22,7 +22,7 @@ const Navbar = ({ clickedBurger, setClickedBurger }) => {
             <line x1="0" y1="0" x2="100" y2="100" strokeWidth="20" />
           </svg>
         </div>
-        <Link to="/main">
+        <Link className={unLogged && 'link-inactive'} to="/main">
           <div className="logo">
             <img src={logo} alt="logo" />
             <svg
@@ -43,20 +43,20 @@ const Navbar = ({ clickedBurger, setClickedBurger }) => {
           </div>
         </Link>
         <div className="menu">
-          <Link to="/main">
-            <button onClick={() => setClickedBurger(false)}>HOME</button>
+          <Link className={unLogged && 'link-inactive'} to="/main">
+            <button className={unLogged && 'btn-inactive'} onClick={() => setClickedBurger(false)}>HOME</button>
           </Link>
-          <Link to="/district">
-            <button onClick={() => setClickedBurger(false)}>MY DISTRICT</button>
+          <Link className={unLogged && 'link-inactive'} to="/district">
+            <button className={unLogged && 'btn-inactive'} onClick={() => setClickedBurger(false)}>MY DISTRICT</button>
           </Link>
 
-          <Link to="/read">
-            <button onClick={() => setClickedBurger(false)}>BONUS</button>
+          <Link className={unLogged && 'link-inactive'} to="/read">
+            <button className={unLogged && 'btn-inactive'} onClick={() => setClickedBurger(false)}>BONUS</button>
           </Link>
-          <button onClick={() => setClickedBurger(false)}>STATISTICS</button>
+          <button className={unLogged && 'btn-inactive'} onClick={() => setClickedBurger(false)}>STATISTICS</button>
         </div>
         <div className="promo">
-          <button onClick={() => setClickedBurger(false)}>PROMO</button>
+          <button className={unLogged && 'btn-inactive'} onClick={() => setClickedBurger(false)}>PROMO</button>
         </div>
         <div className="scroller">
           <div className="scroller-menu scroll1"></div>

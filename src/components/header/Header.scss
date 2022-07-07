@@ -204,6 +204,49 @@
       }
     }
     .sign_button_container {
+      width: 160px;
+      height: 40px;
+      button {
+        background: #F6D738;
+        border-radius: 5px;
+        width: 160px;
+        height: 40px;
+        color: #171213;
+        font-family: 'SF Pro italic';
+        font-size: 18px;
+        line-height: 100%;
+        text-transform: uppercase;
+        transition: all 0.5s;
+        border: none;
+        &:hover {
+          background-color: #353535;
+          color: #979795;
+          cursor: pointer;
+        }
+        &:active {
+          background-color: #806d11;
+        }
+
+        @media (max-width: 630px) {
+          font-size: 14px;
+          width: 90px;
+        }
+
+        @media (max-width: 565px) {
+          font-size: 13px;
+          width: 80px;
+        }
+
+        @media (max-width: 442px) {
+          font-size: 10px;
+          width: 70px;
+        }
+      }
+    }
+
+    .out_button_container {
+      width: 160px;
+      height: 40px;
       button {
         background: #353535;
         border-radius: 5px;

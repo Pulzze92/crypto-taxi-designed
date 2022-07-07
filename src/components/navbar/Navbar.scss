@@ -6,6 +6,10 @@
   min-height: 100vh;
   height: 100%;
 
+  .link-inactive {
+    pointer-events: none;
+  }
+  
   .close_burger {
     @media (min-width: 1040px) {
       display: none;
@@ -66,6 +70,37 @@
     gap: 35px;
     margin-bottom: 12vh;
 
+    .link-inactive {
+      pointer-events: none;
+    }
+
+    .btn-inactive {
+      font-family: 'SF Pro italic';
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+      color: #1a1a1a;
+      background-color: #9f9d9d;
+      border-radius: 5px;
+      width: 240px;
+      height: 72px;
+      color: #ebc821;
+      border: none;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #9f9d9d;
+        color: #ebc821;
+        transform: scale(1);
+      }
+
+      &:active {
+        background-color: #9f9d9d;
+        color: #ebc821;
+        transform: scale(1);
+      }
+    }
+
     button {
       font-family: 'SF Pro italic';
       font-size: 24px;
@@ -102,6 +137,34 @@
 
   .promo {
     margin-bottom: 5.5vh;
+
+    .btn-inactive {
+      font-family: 'SF Pro italic';
+      font-size: 24px;
+      line-height: 100%;
+      text-align: center;
+      color: #1a1a1a;
+      background-color: #9f9d9d;
+      border-radius: 5px;
+      width: 240px;
+      height: 72px;
+      color: #ebc821;
+      border: none;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #9f9d9d;
+        color: #ebc821;
+        transform: scale(1);
+      }
+
+      &:active {
+        background-color: #9f9d9d;
+        color: #ebc821;
+        transform: scale(1);
+      }
+    }
+
     button {
       font-family: 'SF Pro italic';
       font-size: 24px;

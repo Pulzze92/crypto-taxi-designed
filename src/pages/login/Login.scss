@@ -1,9 +1,21 @@
 .login {
   width: 100vw;
   height: 100vh;
-  background-image: url('../../assets/images/login_bckgd.png');
+  background-image: url("../../assets/images/login_bckgd.png");
   background-size: 80%;
   background-repeat: no-repeat;
+
+  p {
+    font-family: "SF Pro italic";
+    font-size: 48px;
+    line-height: 106%;
+    letter-spacing: 0.1em;
+    color: #8e6321;
+    width: 680px;
+    height: 155px;
+    text-align: left;
+    margin-left: 45px;
+  }
 
   @media (max-width: 1700px) {
     background-size: 80%;

@@ -1,28 +1,40 @@
 import React from 'react';
-// import { useWeb3React } from '@web3-react/core';
-// import { injected } from '../components/wallet/Connectors';
+import { ethers } from 'ethers';
+
+import { DAppProvider, useEtherBalance, useEthers, Config, useContractFunction } from '@usedapp/core'
+import { formatEther } from '@ethersproject/units'
+import { getDefaultProvider } from 'ethers';
 
 import styles from './Header.scss';
 
-const Header = ({ clickedBurger, setClickedBurger, unLogged, setUnlogged }) => {
-  const [balance, setBalance] = React.useState(0.0391);
-  // const { active, account, library, connector, activate, deactivate } = useWeb3React();
+import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
-  // async function connect() {
-  //   try {
-  //     await activate(injected);
-  //   } catch (ex) {
-  //     console.log(ex);
-  //   }
-  // }
 
-  // async function disconnect() {
-  //   try {
-  //     deactivate();
-  //   } catch (ex) {
-  //     console.log(ex);
-  //   }
-  // }
+
+const Header = ({ clickedBurger, setClickedBurger, unLogged, setUnlogged, deactivate}) => {
+  const { activateBrowserWallet, account } = useEthers();
+  const [hasMetamask, setHasMetamask] = React.useState(false);
+  const etherBalance = useEtherBalance(account);
+
+  React.useEffect(() => {
+    if (typeof window.ethereum !== "undefined") {
+      setHasMetamask(true);
+    }
+  });
+
+  async function connect() {
+    await activateBrowserWallet();
+  }
+  const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
+  const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
+
+  const { send, state } = useContractFunction(contract, "store", {
+    transactionName: "store",
+  });
+
+  React.useEffect(() => {
+    console.log(`State: ${state.status}`);
+  }, [state]);
 
   return (
     <div className="header">
@@ -51,13 +63,25 @@ const Header = ({ clickedBurger, setClickedBurger, unLogged, setUnlogged }) => {
 
             <div className="balance_amount">
               <span>Balance:</span>
-              <span className="balance_amount-sum">{balance}</span>
+              {etherBalance && (
+                <span className="balance_amount-sum">{formatEther(etherBalance)}</span>
+              )}
               <span className="balance_amount-currency">BNB</span>
             </div>
           </div>
         )}
-        <div className="sign_button_container">
-          <button>{unLogged ? 'sign in' : 'sign out'}</button>
+        <div className={unLogged ? 'sign_button_container' : 'out_button_container'}>
+          {hasMetamask ? (
+            account ? (
+              setUnlogged(false)
+            ) : (
+          <button onClick={() => {
+            activateBrowserWallet();
+            setUnlogged(false);
+          }}>Sign in</button>
+          )) : (setUnlogged(true))}
+
+          
         </div>
       </div>
     </div>

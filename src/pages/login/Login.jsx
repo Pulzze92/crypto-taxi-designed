@@ -1,20 +1,19 @@
 import React from 'react';
-
-// import { NetworkErrorMessage } from './NetworkErrorMessage';
+import {ethers} from 'ethers';
 
 import styles from './Login.scss';
 
-export const Login = ({ connectWallet, networkError, dismiss }) => {
+export const Login = ({ }) => {
+
   return (
     <>
       <div className="login">
-        {/* {networkError && <NetworkErrorMessage message={networkError} dismiss={dismiss} />} */}
+      <p>CONNECT <br />
+YOUR WALLET <br />
+TO START THE GAME</p>
       </div>
-
-      {/* <p>Connect your wallet</p>
-      <button type="button" onClick={connectWallet}>
-        Connect wallet
-      </button> */}
+      
+      
     </>
   );
 };
