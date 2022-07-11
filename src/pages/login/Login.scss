@@ -15,6 +15,20 @@
     height: 155px;
     text-align: left;
     margin-left: 45px;
+
+    @media (max-width: 1570px) {
+      font-size: 45px;
+      width: 50vw;
+    }
+  }
+
+  @media (max-width: 2560px) {
+    background-size: 115%;
+  }
+
+
+  @media (max-width: 1892px) {
+    background-size: 110%;
   }
 
   @media (max-width: 1700px) {
@@ -126,4 +140,41 @@
     background-size: 380%;
     background-position: -30rem 0rem;
   }
+}
+
+.arrow {
+  position: absolute;
+  z-index: 4;
+  left: 77vw;
+  top: 5.5vh;
+
+  @media (max-width: 1570px) {
+    top: 7.1%;
+    left: 68%; 
+    width: 10vw;
+  }
+}
+
+.arrow-inv {
+  display: none;
+}
+
+.taxi_image_sign-in {
+  position: absolute;
+  top: 65vh;
+  left: 40vw;
+
+  @media (max-width: 1892px) {
+    top: 72vh;
+    left: 45vw;
+  }
+
+  @media (max-width: 2560px) {
+    left: 30vw;
+    top: 67vh;
+    img {
+      width: 70vw;
+    }
+  }
+
 }
