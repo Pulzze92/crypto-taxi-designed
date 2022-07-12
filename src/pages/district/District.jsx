@@ -4,7 +4,6 @@ import styles from "./District.scss";
 import taxi from "../../assets/images/taxi_district.png";
 import sign from "../../assets/images/sign_district.png";
 
-import { ethers } from "ethers";
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
 const levels = [
@@ -12,30 +11,30 @@ const levels = [
 ];
 
 const District = () => {
-  const [levelPriceInfo, setLevelPriceInfo] = React.useState([]);
-  const [clickedLvl, setClickedLvl] = React.useState(0);
-  const lvlPrice = [];
+  // const [levelPriceInfo, setLevelPriceInfo] = React.useState([]);
+  // const [clickedLvl, setClickedLvl] = React.useState(0);
+  // const lvlPrice = [];
 
-  const handleSubmit = async (i) => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const cryptoTaxi = new ethers.Contract(
-      "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9",
-      CryptoTaxiAbi,
-      provider
-    );
+  // const handleSubmit = async (i) => {
+  //   const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //   const cryptoTaxi = new ethers.Contract(
+  //     "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9",
+  //     CryptoTaxiAbi,
+  //     provider
+  //   );
 
-    const levelPrice = await cryptoTaxi.getLevelPrices();
+  //   const levelPrice = await cryptoTaxi.getLevelPrices();
 
-    for (let i of Object.values(levelPrice)) {
-      lvlPrice.push(+i._hex.toString(10) / 1000000000000000000);
-    }
+  //   for (let i of Object.values(levelPrice)) {
+  //     lvlPrice.push(+i._hex.toString(10) / 1000000000000000000);
+  //   }
 
-    setLevelPriceInfo(lvlPrice);
-  };
+  //   setLevelPriceInfo(lvlPrice);
+  // };
 
-  React.useEffect(() => {
-    handleSubmit();
-  }, clickedLvl);
+  // React.useEffect(() => {
+  //   handleSubmit();
+  // }, clickedLvl);
 
   return (
     <div className="district">
@@ -43,7 +42,7 @@ const District = () => {
         <div className="levels">
           {levels.map((el, i) => {
             return (
-              <div className="level" key={i} onClick={() => setClickedLvl(el)}>
+              <div className="level" key={i} >
                 <span>{el}</span>
               </div>
             );
@@ -87,7 +86,7 @@ const District = () => {
             <div className="district_price">
               <div className="price_table">
                 <h3>district price:</h3>
-                <h2>{levelPriceInfo[clickedLvl]} BNB</h2>
+                <h2> BNB</h2>
                 <button>Start rent</button>
               </div>
             </div>
