@@ -8,10 +8,12 @@ export const Login = ({ unLogged }) => {
 
   return (
     <>
+    <div className="pos-par">
     <div className={unLogged ? 'arrow' : 'arrow-inv'}>
     <svg width="80" height="18" viewBox="0 0 80 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M80 9L65 0.339746V17.6603L80 9ZM0 10.5H66.5V7.5H0V10.5Z" fill="#F6D738"/>
 </svg>
+</div>
 </div>
       <div className="login">
       <p>CONNECT <br />

@@ -16,21 +16,24 @@
 }
 
 .App {
-  min-height: 100vh;
-
   margin: 0 auto;
   max-height: 100vh;
-  overflow: hidden;
 
-  @media (max-width: 740px) {
-    overflow-x: visible;
-  }
   .app_content {
     display: grid;
     grid-template-areas:
       'navbars headers headers'
       'navbars mains mains'
       'navbars mains mains';
+    grid-template-columns: 1fr 4fr;
+  }
+
+  @media (max-width: 1040px) {
+    grid-template-areas: 
+    'headers'
+    'mains';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 
   a {

@@ -1,10 +1,11 @@
 .navbar {
   grid-area: navbars;
   background-color: #faf1d4;
-  max-width: 100%;
+  max-width: 20vw;
   width: 20vw;
-  min-height: 100vh;
-  height: 100%;
+  height: 100vh;
+  // height: 100%;
+  margin: 0;
 
   .link-inactive {
     pointer-events: none;
@@ -70,6 +71,10 @@
     gap: 35px;
     margin-bottom: 12vh;
 
+    @media(max-width: 1520px) {
+      gap: 50px;
+    }
+
     .link-inactive {
       pointer-events: none;
     }
@@ -99,6 +104,36 @@
         color: #ebc821;
         transform: scale(1);
       }
+
+      @media(max-width: 2560px) {
+        font-size: 32px;
+        width: 300px;
+        height: 90px;
+      }
+
+      @media(max-width: 2100px) {
+        font-size: 27px;
+        width: 250px;
+        height: 70px;
+      }
+
+      @media (max-width: 1570px) {
+        font-size: 22px;
+        width: 180px;
+        height: 60px;
+      }
+
+      @media (max-width: 1520px) {
+        font-size: 24px;
+        width: 200px;
+        height: 60px;
+      }
+
+      @media (max-width: 1250px) {
+        font-size: 13px;
+        width: 140px;
+        height: 40px;
+      }
     }
 
     button {
@@ -116,10 +151,41 @@
       cursor: pointer;
       transition: all 0.5s;
 
+      @media(max-width: 2560px) {
+        font-size: 32px;
+        width: 300px;
+        height: 90px;
+      }
+
+      @media(max-width: 2100px) {
+        font-size: 27px;
+        width: 250px;
+        height: 70px;
+      }
+
+      @media (max-width: 1570px) {
+        font-size: 22px;
+        width: 180px;
+        height: 60px;
+      }
+      
+
+      @media (max-width: 1520px) {
+        font-size: 24px;
+        width: 200px;
+        height: 60px;
+      }
+
       @media (max-width: 1380px) {
         font-size: 15px;
         width: 200px;
         height: 60px;
+      }
+
+      @media (max-width: 1250px) {
+        font-size: 13px;
+        width: 140px;
+        height: 40px;
       }
 
       &:hover {
@@ -137,6 +203,16 @@
 
   .promo {
     margin-bottom: 5.5vh;
+
+    @media(max-width: 2560px) {
+      margin-bottom: 15vh;
+    }
+
+    @media(max-width: 2100px) {
+      margin-bottom: 10vh;
+    }
+
+    
 
     .btn-inactive {
       font-family: 'SF Pro italic';
@@ -163,6 +239,36 @@
         color: #ebc821;
         transform: scale(1);
       }
+
+      @media(max-width: 2560px) {
+        font-size: 32px;
+        width: 300px;
+        height: 90px;
+      }
+
+      @media(max-width: 2100px) {
+        font-size: 27px;
+        width: 250px;
+        height: 70px;
+      }
+
+      @media (max-width: 1570px) {
+        font-size: 22px;
+        width: 180px;
+        height: 60px;
+      }
+
+      @media (max-width: 1520px) {
+        font-size: 24px;
+        width: 200px;
+        height: 60px;
+      }
+
+      @media (max-width: 1250px) {
+        font-size: 13px;
+        width: 140px;
+        height: 40px;
+      }
     }
 
     button {
@@ -180,11 +286,42 @@
       cursor: pointer;
       transition: all 0.5s;
 
+      @media(max-width: 2560px) {
+        font-size: 32px;
+        width: 300px;
+        height: 90px;
+      }
+
+      @media(max-width: 2100px) {
+        font-size: 27px;
+        width: 250px;
+        height: 70px;
+      }
+
+      @media (max-width: 1570px) {
+        font-size: 22px;
+        width: 180px;
+        height: 60px;
+      }
+
+      @media (max-width: 1520px) {
+        font-size: 24px;
+        width: 200px;
+        height: 60px;
+      }
+
       @media (max-width: 1380px) {
         font-size: 15px;
         width: 200px;
         height: 60px;
-        margin-bottom: 5vh;
+        margin-bottom: 1vh;
+      }
+
+      @media (max-width: 1250px) {
+        font-size: 13px;
+        width: 140px;
+        height: 40px;
+        margin-bottom: 1vh;
       }
 
       &:hover {
@@ -320,6 +457,7 @@
       border: none;
       cursor: pointer;
       transition: all 0.5s;
+      
 
       @media (max-width: 1380px) {
         font-size: 15px;
