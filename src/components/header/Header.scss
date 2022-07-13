@@ -284,13 +284,6 @@
         margin-right: 0.7em;
       }
 
-      
-
-      // @media (min-width: 320px) and (max-width: 400px) {
-      //   margin-right: -9em;
-      //   padding-right: 3em;
-      // }
-
       svg {
         margin-top: 8px;
 
@@ -329,11 +322,6 @@
         @media(max-width: 360px) {
           margin-right: -0.4em;
         }
-
-        // @media (min-width: 320px) and (max-width: 400px) {
-        //   margin-left: 0em;
-        //   margin-bottom: 0.4em;
-        // }
       }
       
 
@@ -462,12 +450,6 @@
           font-size: 8px;
           margin-right: -8em;
         }
-
-        // @media (min-width: 320px) and (max-width: 400px) {
-        //   font-size: 12px;
-        //   margin-top: 1.7em;
-        //   margin-right: 1.5em;
-        // }
       }
     }
     .sign_button_container {
@@ -484,7 +466,7 @@
         font-size: 18px;
         line-height: 100%;
         text-transform: uppercase;
-        // transition: all 0.5s;
+        transition: all 0.5s;
         border: none;
         &:hover {
           background-color: #353535;
@@ -609,15 +591,6 @@
         @media (max-width: 470px) {
           margin-left: 23em;
         }
-
-
-        // @media (min-width: 320px) and (max-width: 400px) {
-        //   width: 70px;
-        //   height: 30px;
-        //   font-size: 12px;
-        //   margin-left: 18em;
-        //   margin-top: 0.6em;
-        // }
       }
     }
 
@@ -635,7 +608,7 @@
         font-size: 18px;
         line-height: 100%;
         text-transform: uppercase;
-        // transition: all 0.5s;
+        transition: all 0.5s;
         border: none;
         &:hover {
           background-color: #f6d738;
