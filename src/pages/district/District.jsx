@@ -42,7 +42,6 @@ const District = () => {
         <div className="levels">
           {levels.map((el, i) => {
             return (
-              <div className="level" key={i} >
                 <span>{el}</span>
               </div>
             );

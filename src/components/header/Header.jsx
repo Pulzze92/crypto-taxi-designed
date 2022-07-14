@@ -1,28 +1,49 @@
 import React from 'react';
-// import { useWeb3React } from '@web3-react/core';
-// import { injected } from '../components/wallet/Connectors';
+import { ethers } from 'ethers';
 
 import styles from './Header.scss';
 
-const Header = ({ clickedBurger, setClickedBurger, unLogged, setUnlogged }) => {
-  const [balance, setBalance] = React.useState(0.0391);
-  // const { active, account, library, connector, activate, deactivate } = useWeb3React();
+import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
-  // async function connect() {
-  //   try {
-  //     await activate(injected);
-  //   } catch (ex) {
-  //     console.log(ex);
-  //   }
-  // }
 
-  // async function disconnect() {
-  //   try {
-  //     deactivate();
-  //   } catch (ex) {
-  //     console.log(ex);
-  //   }
-  // }
+
+const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged, deactivate}) => {
+  const [errorMessage, setErrorMessage] = React.useState(null);
+  const [defaultAccount, setDefaultAccount] = React.useState(null);
+  const [userBalance, setUserBalance] = React.useState(null);
+
+  const connectWalletHandler = () => {
+    if(window.ethereum) {
+      window.ethereum.request({method: 'eth_requestAccounts'})
+        .then(result => {
+          accountChangedHandler(result[0]);
+        })
+    } else {
+      setErrorMessage('Install Metamask');
+    }
+  }
+
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    getUserBalance(newAccount.toString());
+  }
+
+  const getUserBalance = (address) => {
+    window.ethereum.request({method: 'eth_getBalance', params: [address, 'latest']})
+      .then(balance => {
+        setUserBalance(ethers.utils.formatEther(balance).slice(0,5));
+      })
+  }
+
+  const chainChangedHandler = () => {
+    window.location.reload();
+  }
+
+  window.ethereum.on('accountsChanged', accountChangedHandler);
+  window.ethereum.on('chainChanged', chainChangedHandler);
+
+  const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
+  const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
 
   return (
     <div className="header">
@@ -51,13 +72,22 @@ const Header = ({ clickedBurger, setClickedBurger, unLogged, setUnlogged }) => {
 
             <div className="balance_amount">
               <span>Balance:</span>
-              <span className="balance_amount-sum">{balance}</span>
+                <span className="balance_amount-sum">{userBalance}</span>
               <span className="balance_amount-currency">BNB</span>
             </div>
           </div>
         )}
-        <div className="sign_button_container">
-          <button>{unLogged ? 'sign in' : 'sign out'}</button>
+        <div className={unLogged ? 'sign_button_container' : 'out_button_container'}>
+          {
+            unLogged ? (<button onClick={() => {
+              setUnlogged(false);
+              connectWalletHandler();
+            }}>sign in</button>) : (<button onClick={() => {
+              setUnlogged(true);
+
+            }}>sign out</button>)
+          }
+          
         </div>
       </div>
     </div>
