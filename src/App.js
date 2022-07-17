@@ -18,12 +18,13 @@ function App() {
   const [clickedBurger, setClickedBurger] = React.useState(false);
   const [unLogged, setUnlogged] = React.useState(true);
   const [accounts, setAccounts] = React.useState([]);
+  const [isLoginPage, setIsLoginPage] = React.useState(true);
 
   const { account, deactivate } = useEthers();
 
   return (
     <div className="App">
-      <div className="app_content">
+      <div className={isLoginPage ? "app_content_login" : "app_content"}>
         <Header
           clickedBurger={clickedBurger}
           setClickedBurger={setClickedBurger}
@@ -31,17 +32,25 @@ function App() {
           unLogged={unLogged}
           account={account}
           deactivate={deactivate}
+          isLoginPage={isLoginPage}
+          setIsLoginPage={setIsLoginPage}
         />
         <Navbar
           clickedBurger={clickedBurger}
           setClickedBurger={setClickedBurger}
           unLogged={unLogged}
           setUnlogged={setUnlogged}
+          isLoginPage={isLoginPage}
         />
         <Routes>
           <Route
             path="/"
-            element={<Login unLogged={unLogged} setUnlogged={setUnlogged} />}
+            element={<Login 
+              unLogged={unLogged}
+              setUnlogged={setUnlogged}
+              isLoginPage={isLoginPage}
+              setIsLoginPage={setIsLoginPage}
+              />}
           />
           <Route path={"/main"} element={<Main unLogged={unLogged}/>} />
           <Route path="/district" element={<District />} />

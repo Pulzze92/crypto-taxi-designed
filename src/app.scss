@@ -16,9 +16,9 @@
 }
 
 .App {
-  margin: 0 auto;
-  max-height: 100vh;
 
+  max-width: 100vw;
+  
   .app_content {
     display: grid;
     grid-template-areas:
@@ -26,6 +26,14 @@
       'navbars mains mains'
       'navbars mains mains';
     grid-template-columns: 1fr 4fr;
+  }
+
+  .app_content_login {
+    display: grid;
+    grid-template-areas: 
+    'headers'
+    'login'
+    ;
   }
 
   @media (max-width: 1040px) {
@@ -40,3 +48,5 @@
     text-decoration: none;
   }
 }
+
+

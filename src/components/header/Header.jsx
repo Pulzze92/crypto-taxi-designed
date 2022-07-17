@@ -5,9 +5,15 @@ import styles from './Header.scss';
 
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
+import logo from '../../assets/images/logo_main.png';
 
-
-const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged, deactivate}) => {
+const Header = ({ clickedBurger, 
+                  setClickedBurger, 
+                  config, 
+                  unLogged, 
+                  setUnlogged, 
+                  deactivate, 
+                  isLoginPage}) => {
   const [errorMessage, setErrorMessage] = React.useState(null);
   const [defaultAccount, setDefaultAccount] = React.useState(null);
   const [userBalance, setUserBalance] = React.useState(null);
@@ -46,8 +52,11 @@ const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged
   const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
 
   return (
-    <div className="header">
-      <div className="header_content">
+    <div className={isLoginPage ? 'header_login' : 'header'}>
+      <div className={unLogged ? "header_unlog" : "header_content"}>
+        <div className={isLoginPage ? 'logo_main' : 'logo_main-dis'}>
+          <img src={logo} alt="logo" />
+        </div>
         <div className={clickedBurger ? 'burger-inactive' : 'burger'}>
           <svg
             onClick={() => setClickedBurger(true)}
@@ -77,14 +86,20 @@ const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged
             </div>
           </div>
         )}
+        {/* <div className={unLogged ? 'empty' : 'empty_dis'}
+        ></div> */}
         <div className={unLogged ? 'sign_button_container' : 'out_button_container'}>
+        <div className={unLogged ? 'arrow' : 'arrow-inv'}>
+    <svg width="80" height="18" viewBox="0 0 80 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M80 9L65 0.339746V17.6603L80 9ZM0 10.5H66.5V7.5H0V10.5Z" fill="#F6D738"/>
+    </svg>
+    </div>
           {
             unLogged ? (<button onClick={() => {
               setUnlogged(false);
               connectWalletHandler();
             }}>sign in</button>) : (<button onClick={() => {
               setUnlogged(true);
-
             }}>sign out</button>)
           }
           

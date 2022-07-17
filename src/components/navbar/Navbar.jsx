@@ -5,9 +5,10 @@ import logo from '../../assets/svg/logo.svg';
 
 import styles from './Navbar.scss';
 
-const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogged }) => {
+const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogged, isLoginPage }) => {
 
   return (
+    <div className={isLoginPage && "unvis"}>
     <div className={clickedBurger ? 'navbar-active' : 'navbar'}>
       <div className="blur">
         <div className="close_burger">
@@ -64,6 +65,7 @@ const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogg
           <div className="scroller-menu scroll3"></div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
