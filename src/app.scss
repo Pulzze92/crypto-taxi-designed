@@ -31,8 +31,8 @@
   .app_content_login {
     display: grid;
     grid-template-areas: 
-    'headers'
-    'login'
+    'navbars headers'
+    'navbars login'
     ;
   }
 
@@ -40,8 +40,6 @@
     grid-template-areas: 
     'headers'
     'mains';
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
   }
 
   a {
