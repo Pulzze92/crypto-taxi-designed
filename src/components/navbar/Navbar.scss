@@ -1,3 +1,7 @@
+.unvis {
+  display: none;
+}
+
 .navbar {
   grid-area: navbars;
   background-color: #faf1d4;
@@ -374,7 +378,7 @@
 
   .blur {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     backdrop-filter: blur(30px);
     position: absolute;
     z-index: 2;

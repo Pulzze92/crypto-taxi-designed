@@ -1,54 +1,62 @@
 import React from 'react';
 import { ethers } from 'ethers';
 
+import {Link} from 'react-router-dom';
 import styles from './Header.scss';
 
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
+import logo from '../../assets/images/logo_main.png';
 
+const Header = ({ clickedBurger, 
+                  setClickedBurger, 
+                  config, 
+                  unLogged, 
+                  setUnlogged, 
+                  deactivate, 
+                  isLoginPage}) => {
+  // const [errorMessage, setErrorMessage] = React.useState(null);
+  // const [defaultAccount, setDefaultAccount] = React.useState(null);
+  // const [userBalance, setUserBalance] = React.useState(null);
 
-const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged, deactivate}) => {
-  const [errorMessage, setErrorMessage] = React.useState(null);
-  const [defaultAccount, setDefaultAccount] = React.useState(null);
-  const [userBalance, setUserBalance] = React.useState(null);
+  // const connectWalletHandler = () => {
+  //   if(window.ethereum) {
+  //     window.ethereum.request({method: 'eth_requestAccounts'})
+  //       .then(result => {
+  //         accountChangedHandler(result[0]);
+  //       })
+  //   } else {
+  //     setErrorMessage('Install Metamask');
+  //   }
+  // }
 
-  const connectWalletHandler = () => {
-    if(window.ethereum) {
-      window.ethereum.request({method: 'eth_requestAccounts'})
-        .then(result => {
-          accountChangedHandler(result[0]);
-        })
-    } else {
-      setErrorMessage('Install Metamask');
-    }
-  }
+  // const accountChangedHandler = (newAccount) => {
+  //   setDefaultAccount(newAccount);
+  //   getUserBalance(newAccount.toString());
+  // }
 
-  const accountChangedHandler = (newAccount) => {
-    setDefaultAccount(newAccount);
-    getUserBalance(newAccount.toString());
-  }
+  // const getUserBalance = (address) => {
+  //   window.ethereum.request({method: 'eth_getBalance', params: [address, 'latest']})
+  //     .then(balance => {
+  //       setUserBalance(ethers.utils.formatEther(balance).slice(0,5));
+  //     })
+  // }
 
-  const getUserBalance = (address) => {
-    window.ethereum.request({method: 'eth_getBalance', params: [address, 'latest']})
-      .then(balance => {
-        setUserBalance(ethers.utils.formatEther(balance).slice(0,5));
-      })
-  }
+  // const chainChangedHandler = () => {
+  //   window.location.reload();
+  // }
 
-  const chainChangedHandler = () => {
-    window.location.reload();
-  }
+  // window.ethereum.on('accountsChanged', accountChangedHandler);
+  // window.ethereum.on('chainChanged', chainChangedHandler);
 
-  window.ethereum.on('accountsChanged', accountChangedHandler);
-  window.ethereum.on('chainChanged', chainChangedHandler);
-
-  const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
-  const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
+  // const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
+  // const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
 
   return (
-    <div className="header">
-      <div className="header_content">
-        <div className={clickedBurger ? 'burger-inactive' : 'burger'}>
+    <div className={!unLogged && "header_login_logged"}>
+    <div className={isLoginPage ? 'header_login' : 'header'}>
+      <div className={clickedBurger ? 'burger_inv' : 'burger'}>
+        <div className={unLogged ? 'burger_inv' : 'empty'}>
           <svg
             onClick={() => setClickedBurger(true)}
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +66,14 @@ const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged
             fill="white">
             <path d="M3.5,7 C3.22385763,7 3,6.77614237 3,6.5 C3,6.22385763 3.22385763,6 3.5,6 L20.5,6 C20.7761424,6 21,6.22385763 21,6.5 C21,6.77614237 20.7761424,7 20.5,7 L3.5,7 Z M3.5,12 C3.22385763,12 3,11.7761424 3,11.5 C3,11.2238576 3.22385763,11 3.5,11 L20.5,11 C20.7761424,11 21,11.2238576 21,11.5 C21,11.7761424 20.7761424,12 20.5,12 L3.5,12 Z M3.5,17 C3.22385763,17 3,16.7761424 3,16.5 C3,16.2238576 3.22385763,16 3.5,16 L20.5,16 C20.7761424,16 21,16.2238576 21,16.5 C21,16.7761424 20.7761424,17 20.5,17 L3.5,17 Z" />
           </svg>
+          </div>
         </div>
+      <div className={unLogged ? "header_unlog" : "header_content"}>
+      
+        <div className={isLoginPage ? 'logo_main' : 'logo_main-dis'}>
+          <img src={logo} alt="logo" />
+        </div>
+        
         {!unLogged && (
           <div className="balance">
             <svg
@@ -72,24 +87,37 @@ const Header = ({ clickedBurger, setClickedBurger, config, unLogged, setUnlogged
 
             <div className="balance_amount">
               <span>Balance:</span>
-                <span className="balance_amount-sum">{userBalance}</span>
+                <span className="balance_amount-sum">0.05</span> 
+                {/* {userBalance} */}
               <span className="balance_amount-currency">BNB</span>
             </div>
           </div>
         )}
+        {/* <div className={unLogged ? 'empty' : 'empty_dis'}
+        ></div> */}
         <div className={unLogged ? 'sign_button_container' : 'out_button_container'}>
+        <div className={unLogged ? 'arrow' : 'arrow-inv'}>
+    <svg width="80" height="18" viewBox="0 0 80 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M80 9L65 0.339746V17.6603L80 9ZM0 10.5H66.5V7.5H0V10.5Z" fill="#F6D738"/>
+    </svg>
+    </div>
           {
-            unLogged ? (<button onClick={() => {
+            unLogged ? (
+              <Link to="/main">
+            <button onClick={() => {
               setUnlogged(false);
-              connectWalletHandler();
-            }}>sign in</button>) : (<button onClick={() => {
+              // connectWalletHandler();
+              
+            }}>sign in</button>
+            </Link>
+            ) : (<button disabled onClick={() => {
               setUnlogged(true);
-
             }}>sign out</button>)
           }
           
         </div>
       </div>
+    </div>
     </div>
   );
 };

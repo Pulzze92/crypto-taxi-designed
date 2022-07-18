@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/svg/logo.svg';
 
 import styles from './Navbar.scss';
+import pdf from '../../CryptoTaxi.pdf';
 
-const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogged }) => {
+const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogged, isLoginPage }) => {
+
+  if(!unLogged) {
 
   return (
     <div className={clickedBurger ? 'navbar-active' : 'navbar'}>
@@ -56,7 +59,9 @@ const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogg
           <button className={unLogged && 'btn-inactive'} onClick={() => setClickedBurger(false)}>STATISTICS</button>
         </div>
         <div className="promo">
+          <a href={pdf} target="_blank">
           <button className={unLogged && 'btn-inactive'} onClick={() => setClickedBurger(false)}>PROMO</button>
+          </a>
         </div>
         <div className="scroller">
           <div className="scroller-menu scroll1"></div>
@@ -66,6 +71,7 @@ const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogg
       </div>
     </div>
   );
+}
 };
 
 export default Navbar;
