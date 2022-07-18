@@ -23,17 +23,16 @@
     display: grid;
     grid-template-areas:
       'navbars headers headers'
-      'navbars mains mains'
-      'navbars mains mains';
-    grid-template-columns: 1fr 4fr;
+      'navbars mains'
+      'navbars mains';
+    // grid-template-columns: 1fr 4fr;
   }
 
   .app_content_login {
     display: grid;
     grid-template-areas: 
     'navbars headers'
-    'navbars login'
-    ;
+    'navbars login';
   }
 
   @media (max-width: 1040px) {

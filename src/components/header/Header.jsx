@@ -1,6 +1,7 @@
 import React from 'react';
 import { ethers } from 'ethers';
 
+import {Link} from 'react-router-dom';
 import styles from './Header.scss';
 
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
@@ -52,6 +53,7 @@ const Header = ({ clickedBurger,
   // const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
 
   return (
+    <div className={!unLogged && "header_login_logged"}>
     <div className={isLoginPage ? 'header_login' : 'header'}>
       <div className={clickedBurger ? 'burger_inv' : 'burger'}>
         <div className={unLogged ? 'burger_inv' : 'empty'}>
@@ -100,16 +102,22 @@ const Header = ({ clickedBurger,
     </svg>
     </div>
           {
-            unLogged ? (<button onClick={() => {
+            unLogged ? (
+              <Link to="/main">
+            <button onClick={() => {
               setUnlogged(false);
               // connectWalletHandler();
-            }}>sign in</button>) : (<button onClick={() => {
+              
+            }}>sign in</button>
+            </Link>
+            ) : (<button disabled onClick={() => {
               setUnlogged(true);
             }}>sign out</button>)
           }
           
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -48,7 +48,7 @@ const Main = ({unLogged}) => {
 
   return (
     <div className="main">
-      <div className="taxi-obj"></div>
+      
       <div className="profile-info">
         <div className="ava_id">
           <div className="avatar"></div>
@@ -82,7 +82,6 @@ const Main = ({unLogged}) => {
             <h4>10000 BNB</h4>
             <button className="lets_play">Let's play</button>
           </div>
-          <div className="live_sep"></div>
           <div className="referal_payouts">
             <h3>Referal payouts:</h3>
             <h4>10000 BNB</h4>
@@ -98,6 +97,10 @@ const Main = ({unLogged}) => {
         </div>
         <h3 className="title_link">PERSONAL REFERAL LINK:</h3>
         <button className="copy_link">COPY LINK</button>
+      </div>
+      <div className="empty"></div>
+      <div className="taxi-obj">
+        <img src={taxiImg} alt="taxi image" />
       </div>
     </div>
   );

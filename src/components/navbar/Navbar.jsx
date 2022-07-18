@@ -8,8 +8,9 @@ import pdf from '../../CryptoTaxi.pdf';
 
 const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogged, isLoginPage }) => {
 
+  if(!unLogged) {
+
   return (
-    // <div className={isLoginPage && "unvis"}>
     <div className={clickedBurger ? 'navbar-active' : 'navbar'}>
       <div className="blur">
         <div className="close_burger">
@@ -69,8 +70,8 @@ const Navbar = ({ clickedBurger, setClickedBurger, signedIn, setSignedIn, unLogg
         </div>
       </div>
     </div>
-    // </div>
   );
+}
 };
 
 export default Navbar;
