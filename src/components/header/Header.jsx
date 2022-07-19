@@ -89,6 +89,7 @@ const Header = ({ clickedBurger,
               <span>Balance:</span>
                 <span className="balance_amount-sum">0.05</span> 
                 {/* {userBalance} */}
+                
               <span className="balance_amount-currency">BNB</span>
             </div>
           </div>
