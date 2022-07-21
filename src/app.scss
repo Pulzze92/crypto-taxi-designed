@@ -23,8 +23,8 @@
     display: grid;
     grid-template-areas:
       'navbars headers headers'
-      'navbars mains'
-      'navbars mains';
+      'navbars mains mains'
+      'navbars mains mains';
     // grid-template-columns: 1fr 4fr;
   }
 

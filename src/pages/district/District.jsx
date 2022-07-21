@@ -2,7 +2,6 @@ import React from "react";
 
 import styles from "./District.scss";
 import taxi from "../../assets/images/taxi_district.png";
-import sign from "../../assets/images/sign_district.png";
 
 import {ethers} from 'ethers';
 
@@ -55,7 +54,6 @@ const District = () => {
         </div>
         <div className="taxi_card">
           <div className="taxi_district">
-            <img src={sign} className="signImg" alt="sign" />
             <img src={taxi} className="taxiImg" alt="taxi" />
           </div>
           <div className="priceSide">

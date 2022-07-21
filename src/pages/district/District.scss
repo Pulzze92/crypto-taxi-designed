@@ -1,411 +1,59 @@
 .district {
   background-color: #84ccf5;
-  grid-area: mains;
-  height: 85vh;
-  
+  height: 85.8vh;
+  margin-top: 3.4em;
   background-image: url('../../assets/images/district_bckgd.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100%;
+  max-width: 80vw;
 
-  @media (max-width: 1620px) {
-    height: 85vh;
-    overflow-y: hidden;
+  @media (max-width: 2000px) {
+    height: 87.5vh;
+    margin-top: 5.4vh;
   }
 
-  @media (max-width: 1540px) {
-    height: 90.2vh;
-    overflow-y: hidden;
+  @media (max-width: 1700px) {
+    height: 84.5vh;
+    margin-top: 5.4vh;
   }
 
-  @media (max-width: 1520px) {
-    background-size: 115%;
-    background-position: 0 -5%;
+  @media (max-width: 1040px) {
+    min-width: 100vw;
   }
 
-  // .grid_overlay {
-  //   display: inline-grid;
-  //   grid-template-rows: 1fr 1fr;
-  //   grid-row-start: 1;
-  //   grid-row-end: 2;
-  //   z-index: 1;
-  // }
-
-  @media (max-width: 1330px) {
-    background-size: 120%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 1270px) {
-    background-size: 125%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 1220px) {
-    background-size: 130%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 1190px) {
-    background-size: 135%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 1130px) {
-    background-size: 140%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 1090px) {
-    background-size: 145%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 1050px) {
-    background-size: 150%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 932px) {
-    background-size: 140%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 912px) and (max-width: 1368px) {
-    background-size: 210%;
-    background-position: 20% 0;
-    height: 102vh;
-  }
-
-  @media (max-width: 865px) {
-    background-size: 170%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 820px) and (max-height: 1180px) {
-    background-size: 200%;
-    background-position: 20% -5%;
-    padding-top: 3em;
-  }
-
-  @media (max-width: 808px) {
-    background-size: 190%;
-    background-position: 20% -5%;
-  }
-
-  @media (max-width: 768px) and (max-height: 1024px) {
-    background-size: 190%;
-    background-position: 20% -5%;
-    padding-top: 3em;
-  }
-
-  @media (max-width: 758px) {
-    background-size: 200%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 722px) {
-    background-size: 205%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 712px) {
-    background-size: 210%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 690px) {
-    background-size: 215%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 676px) {
-    background-size: 220%;
-    background-position: 20% 0%;
-  }
-
-  @media (max-width: 634px) {
-    background-size: 200%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 602px) {
-    background-size: 210%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 580px) {
-    background-size: 250%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 577px) {
-    background-size: 260%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 574px) {
-    background-size: 265%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 550px) {
-    background-size: 270%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 550px) and (max-height: 720px) {
-    margin-left: -0.2em;
-  }
-
-  @media (max-width: 530px) {
-    background-size: 280%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 518px) {
-    background-size: 285%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 510px) {
-    background-size: 290%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 500px) {
-    background-size: 300%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 485px) {
-    background-size: 310%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 466px) {
-    background-size: 320%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 450px) {
-    background-size: 330%;
-  }
-
-  @media (max-width: 442px) {
-    background-size: 340%;
-  }
-
-  @media (max-width: 420px) {
-    background-size: 350%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 410px) {
-    background-size: 360%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 414px) and (max-height: 896px) {
-    margin-left: -0.2em;
-  }
-
-  @media (max-width: 400px) {
-    min-height: 105vh;
-    background-size: 370%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 390px) and (max-height: 844px) {
-    background-size: 350%;
-    margin-left: -0.2em;
-  }
-
-  @media (max-width: 393px) and (max-height: 851px) {
-    background-size: 360%;
-    margin-left: -0.2em;
-    background-position: 20% 0;
-  }
-
-  @media (max-width: 390px) {
-    background-size: 370%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 380px) {
-    background-size: 380%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-width: 360px) {
-    background-size: 390%;
-    background-position: 10% 0%;
-  }
-
-  @media (max-width: 350px) {
-    background-size: 360%;
-    background-position: 10% 0%;
-  }
-
-  @media (max-width: 340px) {
-    background-size: 370%;
-    background-position: 20% 0%;
-  }
-
-  @media (max-width: 330px) {
-    background-size: 380%;
-    background-position: 20% 0%;
-  }
-
-  @media (max-width: 320px) {
-    background-size: 390%;
-    background-position: 20% 0;
-  }
-
-  @media (max-width: 315px) {
-    background-size: 400%;
-    background-position: 20% 0;
-  }
-
-  @media (max-width: 310px) {
-    background-size: 410%;
-    background-position: 20% 0%;
-  }
-
-  @media (max-width: 250px) {
-    background-size: 380%;
-    background-position: 0 -5%;
-  }
-
-  @media (max-height: 700px) {
-    margin-left: -3px;
+  @media (max-width: 820px) {
+    margin-top: 5.3vh;
   }
 
   .levels {
-    display: inline-grid;
+    display: grid;
+    margin: 5em;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    column-gap: 2rem;
-    row-gap: 35px;
-    width: 73rem;
+    column-gap: 1rem;
+    row-gap: 1em;
+    width: 70vw;
     margin-top: 2rem;
     margin-bottom: 2em;
-    height: 30rem;
+    height: 39vh;
     overflow-y: scroll;
     margin-right: -15em;
 
-    @media (max-width: 1650px) {
-      row-gap: 3rem;
-      height: 26rem;
-      margin-left: -14em;
-      
-    }
-
-    @media (max-width: 1580px) {
-      column-gap: 1rem;
-      width: 65rem;
-      margin-left: -12em;
-    }
-
-    @media (max-width: 1480px) {
-      margin-left: -12em;
-    }
-
-    @media (max-width: 1380px) {
-      height: 25rem;
-      width: 55em;
-      margin-left: -7em;
-    }
-
-    @media (max-width: 1330px) {
-      width: 55rem;
-      margin-left: -7rem;
-    }
-
-    @media (max-width: 1230px) {
-      width: 50rem;
-      margin-left: -12rem;
-    }
-
-    @media (max-width: 1100px) {
-      grid-template-columns: repeat(4, 1fr);
-      width: 45rem;
-      margin-left: -8rem;
-    }
-
     @media (max-width: 1040px) {
-      grid-template-columns: repeat(5, 1fr);
-      width: 50rem;
-      margin-left: -14rem;
+      margin: 2em auto;
+      column-gap: 5em;
+      width: 88vw;
+      padding-right: 1em;
     }
 
-    @media (max-width: 912px) and (max-width: 1368px) {
-      margin-bottom: 12em;
-    }
-
-    @media (max-width: 864px) {
-      grid-template-columns: repeat(4, 1fr);
-      width: 46rem;
-      margin-left: -14rem;
-    }
-
-    @media (max-width: 842px) {
-      width: 42rem;
-      margin-left: -14rem;
-    }
-
-    @media (max-width: 785px) {
-      width: 40rem;
-      margin-left: -15rem;
+    @media (max-width: 980px) {
+      column-gap: 1em;
     }
 
     @media (max-width: 750px) {
-      width: 35rem;
-      margin-left: -17rem;
-    }
-
-    @media (max-width: 740px) {
-      width: 35rem;
-      margin-left: -16rem;
-    }
-
-    @media (max-width: 730px) {
-      width: 35rem;
-      margin-left: -15rem;
-    }
-
-    @media (max-width: 665px) {
-      grid-template-columns: repeat(3, 1fr);
-      width: 30rem;
-      height: 22rem;
-      margin: 2rem auto;
-    }
-
-    @media (max-width: 550px) {
-      grid-template-columns: repeat(3, 1fr);
-      width: 27rem;
-      height: 22rem;
-      margin: 2rem auto;
-    }
-
-    @media (max-width: 500px) {
-      grid-template-columns: repeat(3, 1fr);
-      width: 23rem;
-      height: 22rem;
-      margin: 2rem auto;
-    }
-
-    @media (max-width: 450px) {
-      grid-template-columns: repeat(3, 1fr);
-      width: 20rem;
-      height: 22rem;
-      margin: 2rem auto;
-    }
-
-    @media (max-width: 370px) {
-      grid-template-columns: repeat(3, 1fr);
-      width: 17rem;
-      height: 24rem;
-      margin: 2rem auto;
+      margin-left: 9vw;
     }
 
     &::-webkit-scrollbar {
@@ -422,8 +70,8 @@
     }
 
     .level {
-      width: 150px;
-      height: 115px;
+      width: 1.8em;
+      height: 1.8em;
       background: #cfcfcf;
       border: 5px solid #000000;
       border-radius: 25px;
@@ -437,28 +85,16 @@
       cursor: pointer;
       transition: all 0.5s;
 
-      @media (max-width: 1650px) {
-        width: 6rem;
-        height: 6rem;
+      @media (max-width: 1400px) {
+        width: 1.6em;
+        height: 1.6em;
       }
 
-      @media (max-width: 1380px) {
-        width: 5rem;
-        height: 5rem;
+      @media (max-width: 750px) {
+        width: 1.4em;
+        height: 1.4em;
         font-size: 40px;
-      }
-
-      @media (max-width: 665px) {
-        width: 4rem;
-        height: 4rem;
-        font-size: 30px;
-      }
-
-      @media (max-width: 370px) {
-        width: 3rem;
-        height: 3rem;
-        font-size: 25px;
-        border-radius: 13px;
+        border-radius: 15px;
       }
 
       &:hover {
@@ -476,188 +112,30 @@
   }
 
   .taxi_card {
-    width: 43rem;
-    height: 14rem;
     background: #1f1702;
     border-radius: 15px;
     border: none;
-    padding: 27px;
-    margin-left: -8rem;
+    padding: 3em;
 
-    // grid-row-start: 3;
-    // grid-row-end: 2;
-    // grid-column-start: 1;
-    margin-left: 18em;
-    z-index: 1;
-
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-
-    @media (max-width: 1620px) {
-      height: 12rem;
-      margin-top: 1em;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    
+    @media (max-width: 1700px) {
+      padding: 2em;
     }
 
-    @media (max-width: 1580px) {
-      margin-left: 16em;
-    }
-
-    @media (max-width: 1520px) {
-      margin-left: 14em;
-    }
-
-    @media (max-width: 1470px) {
-      margin-left: calc(27em - 20%);
-    }
-
-    @media (max-width: 1365px) {
-      margin-left: calc(14em - 3%);
-    }
-
-    @media (max-width: 1310px) {
-      margin-left: calc(14em - 5%);
-    }
-
-    @media (max-width: 1270px) {
-      margin-left: calc(14em - 8%);
-    }
-
-    @media (max-width: 1230px) {
-      margin-left: calc(14em - 10%);
-    }
-
-    @media (max-width: 1210px) {
-      margin-left: calc(14em - 12%);
-    }
-
-    @media (max-width: 1170px) {
-      margin-left: calc(14em - 14%);
-    }
-
-    @media (max-width: 1150px) {
-      margin-left: calc(14em - 15%);
-    }
-
-    @media (max-width: 1110px) {
-      margin-left: calc(14em - 16%);
-    }
-
-    @media (max-width: 1100px) {
-      margin-left: 10em;
-      width: 32em;
-    }
-
-    @media (max-width: 1040px) {
-      margin-left: 15rem;
-      margin-right: -2rem;
-    }
-
-    @media (max-width: 1015px) {
-      margin-left: 13rem;
-      margin-right: -2rem;
-    }
-
-    @media (max-width: 970px) {
-      margin-left: 12rem;
-      margin-right: -2rem;
-    }
-
-    @media (max-width: 945px) {
-      margin-left: 10rem;
-      margin-right: -2rem;
-    }
-
-    @media (max-width: 880px) {
-      margin-left: 9rem;
-      margin-right: -2rem;
-    }
-
-    @media (max-width: 864px) {
-      margin-left: 9em;
-      width: 32rem;
-    }
-
-    @media (max-width: 830px) {
-      margin-left: 8em;
-    }
-
-    @media (max-width: 810px) {
-      margin-left: 7em;
-    }
-
-    @media (max-width: 800px) {
-      margin-left: 5.5em;
-    }
-
-    @media (max-width: 770px) {
-      margin-left: 4.8rem;
-    }
-
-    @media (max-width: 720px) {
-      margin-left: 4.2rem;
-    }
-
-    @media (max-width: 710px) {
-      margin-left: 4rem;
-    }
-
-    @media (max-width: 700px) {
-      margin-left: 3.8rem;
-    }
-
-    @media (max-width: 690px) {
-      margin-left: 3.6rem;
-    }
-
-    @media (max-width: 676px) {
-      width: 30rem;
-      margin-left: 4.5rem;
-    }
-
-    @media (max-width: 660px) {
-      width: 30rem;
-      margin: 0rem auto;
-    }
-
-    @media (max-width: 580px) {
-      width: 25rem;
-      margin: 0rem auto;
-    }
-
-    @media (max-width: 550px) {
-      height: 13rem;
-      margin: 3rem auto;
-    }
-
-    @media (max-width: 530px) {
-      width: 22rem;
-      height: 13rem;
-      margin: 3rem auto;
-    }
-
-    @media (max-width: 450px) {
-      width: 17rem;
-      height: 13rem;
-      margin: 3rem auto;
-    }
-
-    @media (max-width: 370px) {
-      width: 14rem;
-      height: 13rem;
-      margin: 3rem auto;
-    }
-
-    @media (max-height: 700px) {
-      margin-top: -10px;
-      margin-bottom: 20px;
+    @media (max-width: 780px) {
+      padding: 0.8em;
     }
 
     .priceSide {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin-left: 19rem;
-      margin-bottom: 2rem;
+      align-items: center;
 
       .stars {
         align-self: center;
@@ -666,330 +144,23 @@
         gap: 2rem;
         margin-bottom: 2rem;
 
-        @media (max-width: 1650px) {
-          margin-top: 2rem;
-        }
-
-        @media (max-width: 1620px) {
+        @media (max-width: 780px) {
           gap: 1em;
-          margin-bottom: 0.8em;
-          margin-left: 1.4em;
-        }
-
-        @media (max-width: 1100px) {
-          gap: 0.6em;
-          margin-left: -2.8em;
-        }
-
-        @media (max-width: 864px) {
-          margin-left: -6rem;
-          gap: 1rem;
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-        }
-
-        @media (max-width: 580px) {
-          width: 5rem;
-          margin-right: 1.5em;
-        }
-
-        @media (max-width: 530px) {
-          margin-left: -9rem;
-        }
-
-        @media (max-width: 450px) {
-          margin-left: -12.5rem;
-        }
-
-        @media (max-width: 370px) {
-          margin-left: -15.4rem;
-          width: 4rem;
+          margin-right: -2.2em;
+          margin-bottom: 0.5em;
         }
       }
     }
 
     .taxi_district {
-      
+      margin-right: -4.5em;
       .taxiImg {
-        position: absolute;
-        z-index: 1;
-        top: 45em;
-        right: 40em;
-        width: 21em;
-
-
-        @media (max-width: 1620px) {
-          width: 20em;
-          right: 38em;
-          top: 44em;
+        @media (max-width: 780px) {
+         width: 90%;
         }
 
-        @media (max-width: 1560px) {
-          right: 37em;
-        }
-
-        @media (max-width: 1540px) {
-          top: 42em;
-          right: 36em;
-        }
-
-        @media (max-width: 1520px) {
-          top: 41em;
-          right: 38em;
-        }
-
-        @media (max-width: 1500px) {
-          right: 37em;
-          top: 41em;
-        }
-
-        @media (max-width: 1460px) {
-          right: 36em;
-        }
-
-        @media (max-width: 1420px) {
-          right: 34em;
-        }
-
-        @media (max-width: 1380px) {
-          top: 40em;
-          right: 32em;
-        }
-
-        @media (max-width: 1225px) {
-          left: calc(46vw - 9%);
-        }
-
-        @media (max-width: 1210px) {
-          left: calc(46vw - 12%);
-        }
-
-        @media (max-width: 1115px) {
-          left: calc(46vw - 13%);
-        }
-
-        @media (max-width: 1100px) {
-          width: 15em;
-          left: 26em;
-          top: 42em;
-        }
-
-        @media (max-width: 1040px) {
-          left: calc(33vw - 5%);
-        }
-
-        @media (max-width: 975px) {
-          left: calc(30vw - 1%);
-        }
-
-        @media (max-width: 970px) {
-          left: calc(28vw - 1%);
-        }
-
-        @media (max-width: 945px) {
-          left: calc(25vw - 1%);
-        }
-
-        @media (max-width: 912px) and (max-width: 1368px) {
-          top: 52em;
-        }
-
-        @media (max-width: 850px) {
-          left: calc(30vw - 18%);
-        }
-
-        @media (max-width: 864px) {
-          top: 52.5rem;
-          width: 15rem;
-          left: calc(30vw - 10%);
-        }
-
-        @media (max-width: 820px) {
-          top: 55em;
-        }
-
-        @media (max-width: 820px) and (min-height: 1180px) {
-          top: 45.5em;
-          left: 9em;
-        }
-
-        @media (max-width: 810px) {
-          top: 55rem;
-          width: 15rem;
-          left: calc(28vw - 10%);
-        }
-
-        @media (max-width: 800px) {
-          width: 15rem;
-          top: 55em;
-          left: calc(26vw - 10%);
-        }
-
-        @media (max-width: 768px) and (max-height: 1024px) {
-          top: 55em;
-          left: 7em;
-        }
-
-        @media (max-width: 760px) {
-          left: calc(26vw - 10%);
-        }
-
-        @media (max-width: 690px) {
-          top: 55rem;
-          left: calc(25vw - 10%);
-        }
-
-        @media (max-width: 676px) {
-          top: 55rem;
-          left: calc(25vw - 11%);
-        }
-
-        @media (max-width: 665px) {
-          top: 42em;
-          left: calc(21vw - 7%);
-        }
-
-        @media (max-width: 660px) {
-          top: 41em;
-          left: calc(21vw - 10%);
-        }
-
-        @media (max-width: 615px) {
-          left: calc(22vw - 13%);
-        }
-
-        @media (max-width: 600px) {
-          left: calc(22vw - 14%);
-        }
-
-        @media (max-width: 580px) {
-          width: 10rem;
-          top: 43rem;
-          left: calc(28vw - 10%);
-        }
-
-        @media (max-width: 550px) {
-          top: 47rem;
-          left: calc(24vw - 10%);
-        }
-
-        @media (max-width: 460px) {
-          left: calc(25vw - 15%);
-        }
-
-        @media (max-width: 450px) {
-          top: 47rem;
-          left: calc(25vw - 10%);
-        }
-
-        @media (max-width: 410px) {
-          left: calc(25vw - 13%);
-        }
-
-        @media (max-width: 390px) {
-          top: 47rem;
-          left: calc(22vw - 12%);
-        }
-
-        @media (max-width: 375px) and (max-height: 667px) {
-          top: 40em;
-        }
-
-        @media (max-width: 370px) {
-          width: 8rem;
-          top: 47rem;
-          left: calc(28vw - 10%);
-        }
-
-        @media (max-width: 350px) {
-          width: 8rem;
-          top: 47rem;
-          left: calc(28vw - 13%);
-        }
-
-        @media (max-width: 330px) {
-          width: 8rem;
-          top: 47rem;
-          left: calc(28vw - 16%);
-        }
-      }
-
-      .signImg {
-        position: relative;
-        left: 3rem;
-        z-index: 0;
-        width: 3em;
-        top: 3em;
-
-        @media (max-width: 1620px) {
-          width: 3em;
-          left: 3em;
-          top: 0.4em;
-        }
-
-        @media (max-width: 1410px) {
-          left: 2.5em;
-        }
-
-        @media (max-width: 1380px) {
-          left: 3.5em;
-        }
-
-        @media (max-width: 1100px) {
-          width: 2.2em;
-          top: 3em;
-        }
-
-        @media (max-width: 864px) {
-          top: 4.5rem;
-          width: 2rem;
-          left: 1rem;
-        }
-
-        @media (max-width: 820px) and (max-height: 1180px) {
-          top: 4em;
-        }
-
-        @media (max-width: 800px) {
-          top: 4.2rem;
-          width: 2rem;
-          left: 1rem;
-        }
-
-        @media (max-width: 768px) and (max-height: 1024px) {
-          top: 4em;
-        }
-
-        @media (max-width: 690px) {
-          top: 4rem;
-        }
-
-        @media (max-width: 580px) {
-          width: 2rem;
-          top: 3.8rem;
-          left: calc(4vw - 10%);
-        }
-
-        @media (max-width: 550px) {
-          top: 4.8rem;
-          left: calc(4vw - 10%);
-        }
-
-        @media (max-width: 450px) {
-          top: 5.8rem;
-          left: calc(1vw - 50%);
-        }
-
-        @media (max-width: 450px) {
-          width: 1.3rem;
-          top: 6.8rem;
-          left: calc(1vw - 50%);
-        }
-
-        @media (max-width: 370px) {
-          width: 1.3rem;
-          top: 7.5rem;
-          left: calc(1vw - 50%);
+        @media (max-width: 750px) {
+          width: 70%;
         }
       }
     }
@@ -1002,55 +173,16 @@
       height: 12rem;
       margin-left: 2em;
 
-      @media (max-width: 1620px) {
-        width: 16em;
-        height: 10em;
-        margin-left: 2em;
-        margin-bottom: 1em;
+      @media (max-width: 780px) {
+        width: 30vw;
+        height: 20vh;
       }
 
-      @media (max-width: 1330px) {
-        margin-left: 2rem;
-      }
 
-      @media (max-width: 1100px) {
-        width: 12em;
-        margin-left: -3em;
-      }
-
-      @media (max-width: 864px) {
-        margin-left: -5rem;
-        width: 15rem;
-      }
-
-      @media (max-width: 770px) {
-        margin-left: -4rem;
-        width: 15rem;
-      }
-
-      @media (max-width: 676px) {
-        margin-left: -6rem;
-        width: 15rem;
-      }
-
-      @media (max-width: 580px) {
-        width: 10rem;
-        margin-left: -8em;
-      }
-
-      @media (max-width: 530px) {
-        margin-left: -10rem;
-      }
-
-      @media (max-width: 450px) {
-        margin-left: -11rem;
-        width: 8rem;
-      }
-
-      @media (max-width: 370px) {
-        margin-left: -11.5rem;
-        width: 6rem;
-      }
+    @media (max-width: 750px) {
+     width: 25vw;
+     height: 15vh; 
+    }
 
       .price_table {
         h3 {
@@ -1061,19 +193,10 @@
           color: #ffffff;
           text-transform: uppercase;
 
-          @media (max-width: 1620px) {
-            margin-bottom: -0.2em;
-          } 
 
-          @media (max-width: 760px) {
-            font-size: 14px;
-            margin-bottom: 1rem;
-          }
-
-          @media (max-width: 450px) {
-            font-size: 12px;
-            margin-bottom: 0;
-          }
+    @media (max-width: 750px) {
+     font-size: 14px; 
+    }
         }
 
         h2 {
@@ -1083,25 +206,14 @@
           text-align: center;
           color: #ffffff;
 
-          @media (max-width: 1620px) {
-            font-size: 32px;
-            margin-bottom: 0.3em;
+          @media (max-width: 780px) {
+            font-size: 26px;
           }
 
-          @media (max-width: 1380px) {
-            font-size: 30px;
-            margin-bottom: 2rem;
-          }
 
-          @media (max-width: 760px) {
-            font-size: 20px;
-            margin-bottom: 1rem;
-          }
-
-          @media (max-width: 450px) {
-            font-size: 15px;
-            margin-bottom: 1rem;
-          }
+    @media (max-width: 750px) {
+     font-size: 23px; 
+    }
         }
 
         button {
@@ -1120,38 +232,18 @@
           margin-bottom: 2rem;
           cursor: pointer;
 
-          @media (max-width: 1620px) {
-            width: 10em;
-            font-size: 18px;
-
-          }
-
-          @media (max-width: 1380px) {
-            width: 10rem;
+          @media (max-width: 780px) {
+            width: 7em;
             font-size: 20px;
-            height: 2em;
-            margin-top: -1em;
+            padding: 5px;
           }
 
-          @media (max-width: 760px) {
-            font-size: 16px;
-            width: 10rem;
-            height: 2.5rem;
-          }
 
-          @media (max-width: 580px) {
-            width: 8rem;
-          }
-
-          @media (max-width: 450px) {
-            width: 6rem;
-            font-size: 12px;
-          }
-
-          @media (max-width: 370px) {
-            width: 5rem;
-            font-size: 10px;
-          }
+    @media (max-width: 750px) {
+     width: 7em;
+     font-size: 15px;
+     height: 2.5em;
+    }
 
           &:hover {
             background-color: #000000;
