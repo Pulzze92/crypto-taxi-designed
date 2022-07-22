@@ -181,15 +181,21 @@
       }
 
       @media (max-width: 1380px) {
-        font-size: 15px;
+        font-size: 20px;
         width: 200px;
         height: 60px;
       }
 
       @media (max-width: 1250px) {
-        font-size: 13px;
-        width: 140px;
-        height: 40px;
+        font-size: 18px;
+        width: 180px;
+        height: 60px;
+      }
+
+      @media (max-width: 1250px) {
+        font-size: 16px;
+        width: 160px;
+        height: 50px;
       }
 
       &:hover {
@@ -273,6 +279,8 @@
         width: 140px;
         height: 40px;
       }
+
+      
     }
 
     button {
@@ -315,18 +323,24 @@
       }
 
       @media (max-width: 1380px) {
-        font-size: 15px;
+        font-size: 20px;
         width: 200px;
         height: 60px;
         margin-bottom: 1vh;
       }
 
       @media (max-width: 1250px) {
-        font-size: 13px;
-        width: 140px;
-        height: 40px;
+        font-size: 16px;
+        width: 160px;
+        height: 50px;
         margin-bottom: 1vh;
       }
+
+      @media (max-width: 1100px) {
+        font-size: 16px;
+          width: 160px;
+          height: 50px;
+        }
 
       &:hover {
         background-color: #e6c3169d;
@@ -506,6 +520,8 @@
         height: 60px;
         margin-bottom: 5vh;
       }
+
+      
 
       &:hover {
         background-color: #e6c3169d;

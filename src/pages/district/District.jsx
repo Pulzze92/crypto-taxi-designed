@@ -35,7 +35,7 @@ const District = () => {
 
   React.useEffect(() => {
     handleSubmit();
-  }, [clickedLvl]);
+  }, clickedLvl);
 
   return (
     <div className="district">

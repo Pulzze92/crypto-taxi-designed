@@ -87,8 +87,8 @@ const Header = ({ clickedBurger,
 
             <div className="balance_amount">
               <span>Balance:</span>
-                <span className="balance_amount-sum">0.05</span> 
-                {/* {userBalance} */}
+                <span className="balance_amount-sum">{userBalance}</span> 
+                
                 
               <span className="balance_amount-currency">BNB</span>
             </div>
@@ -107,7 +107,7 @@ const Header = ({ clickedBurger,
               <Link to="/main">
             <button onClick={() => {
               setUnlogged(false);
-              // connectWalletHandler();
+              connectWalletHandler();
               
             }}>sign in</button>
             </Link>
