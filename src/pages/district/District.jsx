@@ -35,7 +35,7 @@ const District = () => {
 
   React.useEffect(() => {
     handleSubmit();
-  }, [clickedLvl]);
+  }, clickedLvl);
 
   return (
     <div className="district">
@@ -43,12 +43,13 @@ const District = () => {
         <div className="levels">
           {levels.map((el, i) => {
             return (
-              <div className="level" key={i} onClick={() => {
+              <button className="level" key={i} onClick={() => {
                 handleSubmit();
                 setClickedLvl(el);
               }}>
                 <span>{el}</span>
-              </div>
+                
+              </button>
             );
           })}
         </div>

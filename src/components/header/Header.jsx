@@ -15,42 +15,42 @@ const Header = ({ clickedBurger,
                   setUnlogged, 
                   deactivate, 
                   isLoginPage}) => {
-  // const [errorMessage, setErrorMessage] = React.useState(null);
-  // const [defaultAccount, setDefaultAccount] = React.useState(null);
-  // const [userBalance, setUserBalance] = React.useState(null);
+  const [errorMessage, setErrorMessage] = React.useState(null);
+  const [defaultAccount, setDefaultAccount] = React.useState(null);
+  const [userBalance, setUserBalance] = React.useState(null);
 
-  // const connectWalletHandler = () => {
-  //   if(window.ethereum) {
-  //     window.ethereum.request({method: 'eth_requestAccounts'})
-  //       .then(result => {
-  //         accountChangedHandler(result[0]);
-  //       })
-  //   } else {
-  //     setErrorMessage('Install Metamask');
-  //   }
-  // }
+  const connectWalletHandler = () => {
+    if(window.ethereum) {
+      window.ethereum.request({method: 'eth_requestAccounts'})
+        .then(result => {
+          accountChangedHandler(result[0]);
+        })
+    } else {
+      setErrorMessage('Install Metamask');
+    }
+  }
 
-  // const accountChangedHandler = (newAccount) => {
-  //   setDefaultAccount(newAccount);
-  //   getUserBalance(newAccount.toString());
-  // }
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    getUserBalance(newAccount.toString());
+  }
 
-  // const getUserBalance = (address) => {
-  //   window.ethereum.request({method: 'eth_getBalance', params: [address, 'latest']})
-  //     .then(balance => {
-  //       setUserBalance(ethers.utils.formatEther(balance).slice(0,5));
-  //     })
-  // }
+  const getUserBalance = (address) => {
+    window.ethereum.request({method: 'eth_getBalance', params: [address, 'latest']})
+      .then(balance => {
+        setUserBalance(ethers.utils.formatEther(balance).slice(0,5));
+      })
+  }
 
-  // const chainChangedHandler = () => {
-  //   window.location.reload();
-  // }
+  const chainChangedHandler = () => {
+    window.location.reload();
+  }
 
-  // window.ethereum.on('accountsChanged', accountChangedHandler);
-  // window.ethereum.on('chainChanged', chainChangedHandler);
+  window.ethereum.on('accountsChanged', accountChangedHandler);
+  window.ethereum.on('chainChanged', chainChangedHandler);
 
-  // const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
-  // const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
+  const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
+  const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
 
   return (
     <div className={!unLogged && "header_login_logged"}>
@@ -87,8 +87,8 @@ const Header = ({ clickedBurger,
 
             <div className="balance_amount">
               <span>Balance:</span>
-                <span className="balance_amount-sum">0.05</span> 
-                {/* {userBalance} */}
+                <span className="balance_amount-sum">{userBalance}</span> 
+                
                 
               <span className="balance_amount-currency">BNB</span>
             </div>
@@ -107,7 +107,7 @@ const Header = ({ clickedBurger,
               <Link to="/main">
             <button onClick={() => {
               setUnlogged(false);
-              // connectWalletHandler();
+              connectWalletHandler();
               
             }}>sign in</button>
             </Link>
