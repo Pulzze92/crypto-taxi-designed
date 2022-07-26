@@ -2,7 +2,7 @@ import React from 'react';
 import {ethers} from 'ethers';
 
 import styles from './Login.scss';
-import taxiImg from '../../assets/images/taxi_sign-in.png';
+import taxiImg from '../../assets/svg/taxi_login.svg';
 
 export const Login = ({isLoginPage, setIsLoginPage, unLogged}) => {
 
