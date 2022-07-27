@@ -20,6 +20,10 @@
     height: 76vh;
   }
 
+  @media (max-height: 520px) {
+    margin-top: 2%;
+  }
+
   .login {
     min-width: 100%;
     overflow-y: hidden;
@@ -30,7 +34,6 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-
 
     p {
       font-family: "SF Pro italic";
@@ -88,16 +91,14 @@
       display: block;
       background: transparent;
       position: absolute;
-    bottom: 0;
-    right: 0;
+      bottom: 0;
+      right: 0;
 
       img {
         height: auto;
         width: 100%;
         max-width: 1017px;
         background: transparent;
-
-       
       }
     }
   }

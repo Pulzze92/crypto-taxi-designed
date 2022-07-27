@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./District.scss";
 import taxi from "../../assets/images/taxi_district.png";
 
-import {ethers} from 'ethers';
+import { ethers } from "ethers";
 
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
@@ -43,12 +43,15 @@ const District = () => {
         <div className="levels">
           {levels.map((el, i) => {
             return (
-              <button className="level" key={i} onClick={() => {
-                handleSubmit();
-                setClickedLvl(el);
-              }}>
+              <button
+                className="level"
+                key={i}
+                onClick={() => {
+                  handleSubmit();
+                  setClickedLvl(el);
+                }}
+              >
                 <span>{el}</span>
-                
               </button>
             );
           })}

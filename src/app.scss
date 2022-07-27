@@ -1,49 +1,46 @@
 /*SF bold*/
 @font-face {
-  font-family: 'SF Pro bold';
-  src: url('./assets/fonts/SF-Pro-Display-Bold.otf');
+  font-family: "SF Pro bold";
+  src: url("./assets/fonts/SF-Pro-Display-Bold.otf");
 }
 
 /*SF*/
 @font-face {
-  font-family: 'SF Pro italic';
-  src: url('./assets/fonts/SF-Pro-Display-BlackItalic.otf');
+  font-family: "SF Pro italic";
+  src: url("./assets/fonts/SF-Pro-Display-BlackItalic.otf");
 }
 
 @font-face {
-  font-family: 'SF Pro normal';
-  src: url('./assets/fonts/SF-Pro-Rounded-Regular.otf');
+  font-family: "SF Pro normal";
+  src: url("./assets/fonts/SF-Pro-Rounded-Regular.otf");
 }
 
 .App {
-
   max-width: 100vw;
-  
+
   .app_content {
     display: grid;
     grid-template-areas:
-      'navbars headers headers'
-      'navbars mains mains'
-      'navbars mains mains';
+      "navbars headers headers"
+      "navbars mains mains"
+      "navbars mains mains";
     // grid-template-columns: 1fr 4fr;
   }
 
   .app_content_login {
     display: grid;
-    grid-template-areas: 
-    'navbars headers'
-    'navbars login';
+    grid-template-areas:
+      "navbars headers"
+      "navbars login";
   }
 
   @media (max-width: 1040px) {
-    grid-template-areas: 
-    'headers'
-    'mains';
+    grid-template-areas:
+      "headers"
+      "mains";
   }
 
   a {
     text-decoration: none;
   }
 }
-
-

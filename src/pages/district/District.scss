@@ -10,13 +10,18 @@
   max-width: 80vw;
   overflow-x: hidden;
 
+  @media (max-width: 3258px) {
+    height: 92.3vh;
+    margin-top: 5.4vh;
+  }
+
   @media (max-width: 2000px) {
-    height: 87.5vh;
+    height: 92.2vh;
     margin-top: 5.4vh;
   }
 
   @media (max-width: 1700px) {
-    height: 84.5vh;
+    height: 92.2vh;
     margin-top: 5.4vh;
   }
 
@@ -29,7 +34,7 @@
   }
 
   @media (max-width: 460px) {
-    margin-top: 5.1vh;
+    margin-top: 5vh;
   }
 
   .levels {
@@ -46,6 +51,42 @@
     overflow-y: scroll;
     margin-right: -15em;
     padding: 4px;
+
+    @media (max-width: 3258px) {
+      margin-left: 17em;
+    }
+
+    @media (max-width: 2670px) {
+      margin-left: 15em;
+    }
+
+    @media (max-width: 2400px) {
+      margin-left: 13em;
+    }
+
+    @media (max-width: 1950px) {
+      margin-left: 11em;
+    }
+
+    @media (max-width: 1700px) {
+      margin-left: 9em;
+    }
+
+    @media (max-width: 1560px) {
+      margin-left: 8em;
+    }
+
+    @media (max-width: 1300px) {
+      margin-left: 6em;
+    }
+
+    @media (max-width: 1180px) {
+      margin-left: 5em;
+    }
+
+    @media (max-width: 1090px) {
+      margin-left: 4em;
+    }
 
     @media (max-width: 1040px) {
       margin: 2em auto;
@@ -196,7 +237,6 @@
             width: 20px;
           }
         }
-        
       }
     }
 
@@ -214,12 +254,11 @@
         margin-left: -6em;
       }
 
-
       @media (max-width: 430px) {
         margin-top: 4em;
         margin-right: -10em;
         margin-left: -7em;
-       }
+      }
 
       .taxiImg {
         @media (max-width: 780px) {
@@ -235,17 +274,13 @@
         }
 
         @media (max-width: 430px) {
-         width: 40%;
+          width: 40%;
         }
       }
     }
 
     .district_price {
-      background: linear-gradient(
-        118.1deg,
-        #7c5b16 17.68%,
-        rgba(113, 81, 17, 0.97) 88.13%
-      );
+      background: linear-gradient(118.1deg, #7c5b16 17.68%, rgba(113, 81, 17, 0.97) 88.13%);
       border: 2px solid #f6d738;
       border-radius: 10px;
       width: 18rem;
@@ -262,18 +297,17 @@
         height: 15vh;
       }
 
-
       @media (max-width: 430px) {
         width: 30vw;
-       }
+      }
 
-       @media (max-width: 430px) {
+      @media (max-width: 430px) {
         width: 35vw;
-       }
+      }
 
-       @media (max-width: 430px) {
+      @media (max-width: 430px) {
         width: 37vw;
-       }
+      }
 
       .price_table {
         h3 {
