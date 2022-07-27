@@ -91,7 +91,7 @@ const Main = ({ unLogged }) => {
               <h4>10000 BNB</h4>
               <button className="lets_play">Let's play</button>
             </div>
-            <div className="divide"></div>
+
             <div className="referal_payouts">
               <h3>Referal payouts:</h3>
               <h4>10000 BNB</h4>
