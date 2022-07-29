@@ -8,6 +8,9 @@ import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
 import logo from "../../assets/images/logo_main.png";
 
+import ErrorPopUp from "../errorPopup/ErrorPopUp";
+import taxiGame from "../../Contract";
+
 const Header = ({
   clickedBurger,
   setClickedBurger,
@@ -17,25 +20,39 @@ const Header = ({
   deactivate,
   isLoginPage,
 }) => {
-  const [errorMessage, setErrorMessage] = React.useState(null);
+  const [noMetamask, setNoMetamask] = React.useState(null);
   const [defaultAccount, setDefaultAccount] = React.useState(null);
   const [userBalance, setUserBalance] = React.useState(null);
+  const [failedConnection, setFailedConnection] = React.useState(false);
+
+  const [isUserRegistered, setIsUserRegistered] = React.useState(false);
 
   const connectWalletHandler = () => {
     if (window.ethereum) {
+      setNoMetamask(false);
       window.ethereum
         .request({ method: "eth_requestAccounts" })
-        .then((result) => {
+        .then(async (result) => {
           accountChangedHandler(result[0]);
+          setFailedConnection(false);
+          setIsUserRegistered(await taxiGame.isUserRegistered());
+          if (!isUserRegistered) {
+            await taxiGame.register();
+          }
+        })
+        .catch((res) => {
+          console.log(res.message);
+          setFailedConnection(true);
         });
     } else {
-      setErrorMessage("Install Metamask");
+      setNoMetamask(true);
     }
   };
 
   const accountChangedHandler = (newAccount) => {
     setDefaultAccount(newAccount);
     getUserBalance(newAccount.toString());
+    setFailedConnection(true);
   };
 
   const getUserBalance = (address) => {
@@ -53,11 +70,19 @@ const Header = ({
   window.ethereum.on("accountsChanged", accountChangedHandler);
   window.ethereum.on("chainChanged", chainChangedHandler);
 
-  const contractAddress = "0xc5c06fd71722d45aebd2d4e50c3e7d9a67676bb9";
+  const contractAddress = "0xBF6645CD554cd3CD74E30290726Feb25c08D079a";
   const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
 
   return (
     <div className={!unLogged && "header_login_logged"}>
+      {failedConnection && (
+        <ErrorPopUp
+          message={"Failed to connect to Metamask!"}
+          callback={connectWalletHandler}
+          textCallBack="Try again!"
+        />
+      )}
+      {noMetamask && <ErrorPopUp message={"Install Metamask"} />}
       <div className={isLoginPage ? "header_login" : "header"}>
         <div className={clickedBurger ? "burger_inv" : "burger"}>
           <div className={unLogged ? "burger_inv" : "empty"}>

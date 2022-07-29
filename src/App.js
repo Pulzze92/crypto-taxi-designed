@@ -13,17 +13,18 @@ import CryptoTaxiAbi from "./CryptoTaxi.json";
 
 import { useEthers} from '@usedapp/core';
 
-
 function App() {
   const [clickedBurger, setClickedBurger] = React.useState(false);
   const [unLogged, setUnlogged] = React.useState(true);
   const [accounts, setAccounts] = React.useState([]);
   const [isLoginPage, setIsLoginPage] = React.useState(true);
 
+  const [isUserRegistered, setIsUserRegistered] = React.useState(false);
+
   const { account, deactivate } = useEthers();
 
   return (
-    <div className="App">
+    <div className={!isUserRegistered ? 'App' : 'NoApp'}>
       <div className={isLoginPage ? "app_content_login" : "app_content"}>
         <Header
           clickedBurger={clickedBurger}
