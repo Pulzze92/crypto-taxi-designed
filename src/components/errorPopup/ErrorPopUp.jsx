@@ -6,8 +6,6 @@ import styles from "./ErrorPopUp.scss";
 export const ErrorPopUp = ({ message, url, callback, textCallBack }) => {
   const [isPopUpVisible, setIsPopUpVisible] = React.useState(true);
 
-  console.log(isPopUpVisible);
-
   return (
     <div className={isPopUpVisible ? "errorPopUp" : "invisiblePopUp"}>
       <div className="errorMsg">{message}</div>

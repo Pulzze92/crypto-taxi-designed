@@ -25,18 +25,19 @@ const Header = ({
   const [userBalance, setUserBalance] = React.useState(null);
   const [failedConnection, setFailedConnection] = React.useState(false);
 
-  const [isUserRegistered, setIsUserRegistered] = React.useState(false);
-
   const connectWalletHandler = () => {
     if (window.ethereum) {
       setNoMetamask(false);
       window.ethereum
         .request({ method: "eth_requestAccounts" })
         .then(async (result) => {
+          console.log("result: " + result);
           accountChangedHandler(result[0]);
           setFailedConnection(false);
-          setIsUserRegistered(await taxiGame.isUserRegistered());
-          if (!isUserRegistered) {
+          const registerRes = await taxiGame.isUserRegistered(result[0]);
+          console.log(registerRes);
+
+          if (!registerRes) {
             await taxiGame.register();
           }
         })

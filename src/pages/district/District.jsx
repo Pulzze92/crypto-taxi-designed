@@ -7,9 +7,9 @@ import { ethers } from "ethers";
 
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
 
-import taxiGame from "../../Contract";
-
-const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const levels = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
 
 const District = () => {
   const [levelPriceInfo, setLevelPriceInfo] = React.useState([]);
@@ -17,11 +17,17 @@ const District = () => {
   const lvlPrice = [];
 
   const handleSubmit = async (i) => {
-    const levelInfo = await taxiGame.getLevelsInfo();
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const cryptoTaxi = new ethers.Contract(
+      "0xBF6645CD554cd3CD74E30290726Feb25c08D079a",
+      CryptoTaxiAbi,
+      provider
+    );
 
-    lvlPrice.push(levelInfo[2].toString(10));
+    const levelPrice = await cryptoTaxi.getLevelPrices();
 
-    for (let i of Object.values(levelInfo[2])) {
+    for (let i of Object.values(levelPrice)) {
       lvlPrice.push(+i._hex.toString(10) / 1000000000000000000);
     }
 

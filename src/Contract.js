@@ -10,18 +10,21 @@ const checkWalletAddress = () => {
   };
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
+const signer = provider.getSigner();
 const cryptoTaxi = new ethers.Contract(
       "0xBF6645CD554cd3CD74E30290726Feb25c08D079a",
       CryptoTaxiAbi,
-      provider
+      signer
 );
+
+const registerOptions = {value: ethers.utils.parseEther("0.025")};
 
 const taxiGame = {
     register: async () => {
-        await cryptoTaxi.register();
+        await cryptoTaxi.register(registerOptions);
     },
-    isUserRegistered: async () => {
-        const isRegistered = await cryptoTaxi.isUserRegistered(checkWalletAddress());
+    isUserRegistered: async (result) => {
+        const isRegistered = await cryptoTaxi.isUserRegistered(result);
         return isRegistered;
     },
     getLevelsInfo: async () => {
