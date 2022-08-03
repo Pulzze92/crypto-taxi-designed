@@ -11,6 +11,8 @@ import logo from "../../assets/images/logo_main.png";
 import ErrorPopUp from "../errorPopup/ErrorPopUp";
 import taxiGame from "../../Contract";
 
+import { useMetaMask } from "metamask-react";
+
 const Header = ({
   clickedBurger,
   setClickedBurger,
@@ -25,36 +27,19 @@ const Header = ({
   const [userBalance, setUserBalance] = React.useState(null);
   const [failedConnection, setFailedConnection] = React.useState(false);
 
-  const connectWalletHandler = () => {
-    if (window.ethereum) {
-      setNoMetamask(false);
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then(async (result) => {
-          console.log("result: " + result);
-          accountChangedHandler(result[0]);
-          setFailedConnection(false);
-          const registerRes = await taxiGame.isUserRegistered(result[0]);
-          console.log(registerRes);
+  const { status, connect, account, chainId, ethereum } = useMetaMask();
 
-          if (!registerRes) {
-            await taxiGame.register();
-          }
-        })
-        .catch((res) => {
-          console.log(res.message);
-          setFailedConnection(true);
-        });
-    } else {
+  React.useEffect(() => {
+    if (status === "unavailable") {
       setNoMetamask(true);
+    } else if (status === "notConnected") {
+      setFailedConnection(true);
+    } else {
+      setFailedConnection(false);
+      setNoMetamask(false);
+      getUserBalance(account);
     }
-  };
-
-  const accountChangedHandler = (newAccount) => {
-    setDefaultAccount(newAccount);
-    getUserBalance(newAccount.toString());
-    setFailedConnection(true);
-  };
+  }, [status]);
 
   const getUserBalance = (address) => {
     window.ethereum
@@ -64,26 +49,23 @@ const Header = ({
       });
   };
 
-  const chainChangedHandler = () => {
-    window.location.reload();
-  };
-
-  window.ethereum.on("accountsChanged", accountChangedHandler);
-  window.ethereum.on("chainChanged", chainChangedHandler);
-
-  const contractAddress = "0xBF6645CD554cd3CD74E30290726Feb25c08D079a";
-  const contract = new ethers.Contract(contractAddress, CryptoTaxiAbi);
-
   return (
-    <div className={!unLogged && "header_login_logged"}>
+    <div className={!unLogged ? "header_login_logged" : null}>
       {failedConnection && (
         <ErrorPopUp
           message={"Failed to connect to Metamask!"}
-          callback={connectWalletHandler}
+          callback={connect}
           textCallBack="Try again!"
         />
       )}
-      {noMetamask && <ErrorPopUp message={"Install Metamask"} />}
+      {noMetamask && (
+        <ErrorPopUp
+          message={"Install Metamask"}
+          url={
+            "https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
+          }
+        />
+      )}
       <div className={isLoginPage ? "header_login" : "header"}>
         <div className={clickedBurger ? "burger_inv" : "burger"}>
           <div className={unLogged ? "burger_inv" : "empty"}>
@@ -124,8 +106,6 @@ const Header = ({
               </div>
             </div>
           )}
-          {/* <div className={unLogged ? 'empty' : 'empty_dis'}
-        ></div> */}
           <div
             className={
               unLogged ? "sign_button_container" : "out_button_container"
@@ -150,7 +130,7 @@ const Header = ({
                 <button
                   onClick={() => {
                     setUnlogged(false);
-                    connectWalletHandler();
+                    connect();
                   }}
                 >
                   sign in

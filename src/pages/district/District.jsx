@@ -6,37 +6,38 @@ import taxi from "../../assets/images/taxi_district.png";
 import { ethers } from "ethers";
 
 import CryptoTaxiAbi from "../../CryptoTaxi.json";
+import taxiGame from "../../Contract";
 
-const levels = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-];
+const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const District = () => {
   const [levelPriceInfo, setLevelPriceInfo] = React.useState([]);
   const [clickedLvl, setClickedLvl] = React.useState(0);
+  const [lvlsBought, setLvlsBought] = React.useState([]);
+
   const lvlPrice = [];
+  const lvlsHave = [];
 
   const handleSubmit = async (i) => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const cryptoTaxi = new ethers.Contract(
-      "0xBF6645CD554cd3CD74E30290726Feb25c08D079a",
-      CryptoTaxiAbi,
-      provider
-    );
+    const levelPrice = await taxiGame.getLevelsInfo();
 
-    const levelPrice = await cryptoTaxi.getLevelPrices();
-
-    for (let i of Object.values(levelPrice)) {
+    for (let i of levelPrice[2]) {
       lvlPrice.push(+i._hex.toString(10) / 1000000000000000000);
     }
 
+    levelPrice[0].forEach((el, i) => {
+      if (el === true) {
+        lvlsHave.push(i);
+      }
+    });
+
+    setLvlsBought(lvlsHave);
     setLevelPriceInfo(lvlPrice);
   };
 
   React.useEffect(() => {
     handleSubmit();
-  }, clickedLvl);
+  }, [lvlsBought]);
 
   return (
     <div className="district">
@@ -45,7 +46,14 @@ const District = () => {
           {levels.map((el, i) => {
             return (
               <button
-                className="level"
+                disabled={el != lvlsBought[i] && el != lvlsBought.length + 1}
+                className={
+                  el == lvlsBought[i]
+                    ? "level"
+                    : el == lvlsBought.length + 1
+                    ? "level next"
+                    : "level inactive"
+                }
                 key={i}
                 onClick={() => {
                   handleSubmit();
@@ -95,7 +103,17 @@ const District = () => {
               <div className="price_table">
                 <h3>district price:</h3>
                 <h2>{levelPriceInfo[clickedLvl]} BNB</h2>
-                <button>Start rent</button>
+                <button
+                  onClick={() => {
+                    taxiGame.buyLevel(clickedLvl, {
+                      value: ethers.utils.parseEther(
+                        `${levelPriceInfo[clickedLvl]}`
+                      ),
+                    });
+                  }}
+                >
+                  Start rent
+                </button>
               </div>
             </div>
           </div>

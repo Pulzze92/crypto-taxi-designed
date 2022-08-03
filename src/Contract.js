@@ -33,6 +33,13 @@ const taxiGame = {
     },
     getUserInfo: async () => {
         const userInfo = await cryptoTaxi.getUserAndRewardInfo();
+    },
+    buyLevel: async (lvl, price) => {
+        const lvlBuy = await cryptoTaxi.buyLevel(lvl, price);
+    },
+    getUserAndRewardInfo: async () => {
+        const usrObj = await cryptoTaxi.getUserAndRewardInfo();
+        return usrObj;
     }
 }
 

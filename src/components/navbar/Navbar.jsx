@@ -31,7 +31,7 @@ const Navbar = ({
               <line x1="0" y1="0" x2="100" y2="100" strokeWidth="20" />
             </svg>
           </div>
-          <Link className={unLogged && "link-inactive"} to="/main">
+          <Link className={unLogged ? "link-inactive" : null} to="/main">
             <div className="logo">
               <img src={logo} alt="logo" />
               <svg
@@ -53,33 +53,33 @@ const Navbar = ({
             </div>
           </Link>
           <div className="menu">
-            <Link className={unLogged && "link-inactive"} to="/main">
+            <Link className={unLogged ? "link-inactive" : null} to="/main">
               <button
-                className={unLogged && "btn-inactive"}
+                className={unLogged ? "btn-inactive" : null}
                 onClick={() => setClickedBurger(false)}
               >
                 HOME
               </button>
             </Link>
-            <Link className={unLogged && "link-inactive"} to="/district">
+            <Link className={unLogged ? "link-inactive" : null} to="/district">
               <button
-                className={unLogged && "btn-inactive"}
+                className={unLogged ? "btn-inactive" : null}
                 onClick={() => setClickedBurger(false)}
               >
                 MY DISTRICT
               </button>
             </Link>
 
-            <Link className={unLogged && "link-inactive"} to="/read">
+            <Link className={unLogged ? "link-inactive" : null} to="/read">
               <button
-                className={unLogged && "btn-inactive"}
+                className={unLogged ? "btn-inactive" : null}
                 onClick={() => setClickedBurger(false)}
               >
                 BONUS
               </button>
             </Link>
             <button
-              className={unLogged && "btn-inactive"}
+              className={unLogged ? "btn-inactive" : null}
               onClick={() => setClickedBurger(false)}
             >
               STATISTICS
@@ -88,7 +88,7 @@ const Navbar = ({
           <div className="promo">
             <a href={pdf} target="_blank">
               <button
-                className={unLogged && "btn-inactive"}
+                className={unLogged ? "btn-inactive" : null}
                 onClick={() => setClickedBurger(false)}
               >
                 PROMO

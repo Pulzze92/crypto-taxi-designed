@@ -11,10 +11,7 @@ export const ErrorPopUp = ({ message, url, callback, textCallBack }) => {
       <div className="errorMsg">{message}</div>
       <div className="buttonAction">
         {url && (
-          <Link
-            to="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn"
-            target="_blank"
-          >
+          <Link to={url} target="_blank">
             Download Metamask (Click here)
           </Link>
         )}

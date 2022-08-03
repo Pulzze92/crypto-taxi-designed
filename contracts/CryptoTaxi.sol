@@ -437,6 +437,7 @@ contract CryptoTaxi {
         tokenBurner = _tokenBurner;
     }
 
+    //district profit, timestamp, referrer on main page
     function getUserAndRewardInfo()
         public
         view
