@@ -32,6 +32,7 @@ const Header = ({
 
   const checkRegistration = async (account) => {
     const isReg = await taxiGame.isUserRegistered(account);
+    console.log(isReg);
     return isReg;
   };
 
@@ -139,7 +140,7 @@ const Header = ({
                   onClick={() => {
                     setUnlogged(false);
                     connect();
-                    if (!isUserRegistered) taxiGame.register(account);
+                    if (!isUserRegistered) taxiGame.register();
                   }}
                 >
                   sign in
