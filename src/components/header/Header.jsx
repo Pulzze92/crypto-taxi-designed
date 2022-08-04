@@ -26,8 +26,14 @@ const Header = ({
   const [defaultAccount, setDefaultAccount] = React.useState(null);
   const [userBalance, setUserBalance] = React.useState(null);
   const [failedConnection, setFailedConnection] = React.useState(false);
+  const [isUserRegistered, setIsUserRegistered] = React.useState(false);
 
   const { status, connect, account, chainId, ethereum } = useMetaMask();
+
+  const checkRegistration = async (account) => {
+    const isReg = await taxiGame.isUserRegistered(account);
+    return isReg;
+  };
 
   React.useEffect(() => {
     if (status === "unavailable") {
@@ -38,6 +44,8 @@ const Header = ({
       setFailedConnection(false);
       setNoMetamask(false);
       getUserBalance(account);
+      const regAns = checkRegistration(account);
+      setIsUserRegistered(regAns);
     }
   }, [status]);
 
@@ -131,6 +139,7 @@ const Header = ({
                   onClick={() => {
                     setUnlogged(false);
                     connect();
+                    if (!isUserRegistered) taxiGame.register(account);
                   }}
                 >
                   sign in

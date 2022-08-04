@@ -35,7 +35,7 @@ const Main = ({ unLogged }) => {
     setRefRwd(receivedObj[6].toString(10));
 
     let isInvited = receivedObj[2].toString(10);
-    isInvited > 0
+    isInvited > 1
       ? setReferrer(`by Id ${isInvited}`)
       : setReferrer("Have no referrer");
   };
