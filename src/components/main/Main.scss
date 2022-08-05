@@ -1,71 +1,72 @@
 .main {
+  grid-area: main;
   background-image: url("../../assets/images/bckgd-main.png");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 80.4vh;
+  height: 100vh;
   max-width: 80vw;
 
-  @media (min-height: 1120px) {
-    min-height: 82vh;
-  }
+  // @media (min-height: 1120px) {
+  //   min-height: 82vh;
+  // }
 
-  @media (min-height: 1170px) {
-    min-height: 83vh;
-  }
+  // @media (min-height: 1170px) {
+  //   min-height: 83vh;
+  // }
 
-  @media (min-height: 1380px) {
-    min-height: 84vh;
-  }
+  // @media (min-height: 1380px) {
+  //   min-height: 84vh;
+  // }
 
-  @media (min-height: 1480px) {
-    min-height: 85vh;
-  }
+  // @media (min-height: 1480px) {
+  //   min-height: 85vh;
+  // }
 
-  @media (min-height: 1650px) {
-    min-height: 86vh;
-  }
+  // @media (min-height: 1650px) {
+  //   min-height: 86vh;
+  // }
 
   @media (max-width: 1040px) {
     min-width: 100vw;
   }
 
-  @media (max-height: 780px) {
-    margin-top: 1%;
-  }
+  // @media (max-height: 780px) {
+  //   margin-top: 1%;
+  // }
 
-  @media (max-height: 710px) {
-    margin-top: 2%;
-  }
+  // @media (max-height: 710px) {
+  //   margin-top: 2%;
+  // }
 
-  @media (max-height: 550px) {
-    margin-top: 2.5%;
-  }
+  // @media (max-height: 550px) {
+  //   margin-top: 2.5%;
+  // }
 
-  @media (max-height: 485px) {
-    margin-top: 2.4%;
-  }
+  // @media (max-height: 485px) {
+  //   margin-top: 2.4%;
+  // }
 
-  @media (max-height: 465px) {
-    margin-top: 2.3%;
-  }
+  // @media (max-height: 465px) {
+  //   margin-top: 2.3%;
+  // }
 
-  @media (max-height: 437px) {
-    margin-top: 2.2%;
-  }
+  // @media (max-height: 437px) {
+  //   margin-top: 2.2%;
+  // }
 
-  @media (max-height: 430px) {
-    margin-top: 2%;
-  }
+  // @media (max-height: 430px) {
+  //   margin-top: 2%;
+  // }
 
-  @media (max-height: 390px) {
-    margin-top: 1.8%;
-  }
+  // @media (max-height: 390px) {
+  //   margin-top: 1.8%;
+  // }
 
-  @media (max-height: 350px) {
-    margin-top: 1.5%;
-  }
+  // @media (max-height: 350px) {
+  //   margin-top: 1.5%;
+  // }
 
   .top_cards {
     display: flex;

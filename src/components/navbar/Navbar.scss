@@ -3,7 +3,7 @@
 }
 
 .navbar {
-  grid-area: navbars;
+  grid-area: navbar;
   background-color: #faf1d4;
   max-width: 20vw;
   width: 20vw;
@@ -28,7 +28,7 @@
   @media (max-width: 1040px) {
     transform: scale(0);
     width: 0;
-    transform: translateY(-150%);
+    transform: translateY(-350%);
 
     .menu {
       transform: scale(0.5);

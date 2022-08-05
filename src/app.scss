@@ -17,21 +17,21 @@
 
 .App {
   max-width: 100vw;
-
-  .app_content {
-    display: grid;
-    grid-template-areas:
-      "navbars headers headers"
-      "navbars mains mains"
-      "navbars mains mains";
-    // grid-template-columns: 1fr 4fr;
-  }
-
+  overflow: hidden;
+  max-height: 100vh;
   .app_content_login {
     display: grid;
     grid-template-areas:
-      "navbars headers"
-      "navbars login";
+      "navbar header"
+      "navbar main"
+      "navbar main";
+
+    //   @media (max-width: 1040px) {
+    //     grid-template-areas:
+    //       "header"
+    //       "main";
+    //   }
+    // }
   }
 
   @media (max-width: 1040px) {

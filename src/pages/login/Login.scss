@@ -9,7 +9,6 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   max-height: 84vh;
-  overflow-x: hidden;
 
   @media (max-height: 810px) {
     overflow-y: hidden;
@@ -26,7 +25,6 @@
 
   .login {
     min-width: 100%;
-    overflow-y: hidden;
     max-height: 86vh;
 
     grid-area: login;

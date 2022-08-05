@@ -31,7 +31,9 @@ const Main = ({ unLogged }) => {
     let date = dateObj.toLocaleString("ru");
     setDateReg(date.split(",")[0]);
 
-    setDistrictProfit(receivedObj[5].toString(10));
+    setDistrictProfit(
+      (receivedObj[5].toString(10) / 1000000000000000000).toFixed(4)
+    );
     setRefRwd(receivedObj[6].toString(10));
 
     let isInvited = receivedObj[2].toString(10);

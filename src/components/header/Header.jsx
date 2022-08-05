@@ -32,23 +32,27 @@ const Header = ({
 
   const checkRegistration = async (account) => {
     const isReg = await taxiGame.isUserRegistered(account);
-    console.log(isReg);
-    return isReg;
+    setIsUserRegistered(isReg);
+    if (!isUserRegistered) {
+      await taxiGame.register();
+    }
   };
 
-  React.useEffect(() => {
-    if (status === "unavailable") {
-      setNoMetamask(true);
-    } else if (status === "notConnected") {
-      setFailedConnection(true);
-    } else {
-      setFailedConnection(false);
-      setNoMetamask(false);
-      getUserBalance(account);
-      const regAns = checkRegistration(account);
-      setIsUserRegistered(regAns);
-    }
-  }, [status]);
+  React.useEffect(
+    () => {
+      if (status === "unavailable") {
+        setNoMetamask(true);
+      } else if (status === "notConnected") {
+        setFailedConnection(true);
+      } else {
+        setFailedConnection(false);
+        setNoMetamask(false);
+        getUserBalance(account);
+      }
+    },
+    [status],
+    [userBalance]
+  );
 
   const getUserBalance = (address) => {
     window.ethereum
@@ -59,7 +63,7 @@ const Header = ({
   };
 
   return (
-    <div className={!unLogged ? "header_login_logged" : null}>
+    <div className={!unLogged ? "header_login_logged" : "header_unl"}>
       {failedConnection && (
         <ErrorPopUp
           message={"Failed to connect to Metamask!"}
@@ -140,7 +144,7 @@ const Header = ({
                   onClick={() => {
                     setUnlogged(false);
                     connect();
-                    if (!isUserRegistered) taxiGame.register();
+                    checkRegistration(account);
                   }}
                 >
                   sign in
@@ -151,6 +155,7 @@ const Header = ({
                 disabled
                 onClick={() => {
                   setUnlogged(true);
+                  checkRegistration(account);
                 }}
               >
                 sign out

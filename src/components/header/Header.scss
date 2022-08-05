@@ -1,12 +1,22 @@
 .header {
-  min-width: 100vw;
+  width: 80vw;
+  grid-area: header;
+  min-height: 12vh;
+}
+
+.header_unl {
+  height: 100%;
 }
 
 .header_login_logged {
   height: 100%;
-  margin-bottom: -5.4vh;
+  grid-area: header;
+  min-height: 12vh;
+
   .header_login {
     width: 80vw;
+    min-height: 100%;
+    grid-area: header;
 
     @media (max-width: 1040px) {
       width: 100vw;
@@ -18,10 +28,9 @@
 .header_login {
   width: 100vw;
   // min-height: 90px;
-  padding-top: 1em;
+  min-height: 12vh;
   background-color: rgba(26, 26, 26, 1);
-  padding-bottom: 2em;
-  max-height: 15vh;
+  grid-area: header;
 
   @media (max-height: 950px) {
     margin-bottom: 0%;
@@ -56,15 +65,16 @@
   }
 
   .burger_inv {
-    // visibility: hidden;
-    margin-bottom: -20px;
+    visibility: hidden;
+    margin-top: -3.2vh;
   }
 
   .header_unlog {
     display: grid;
     grid-template-columns: 1fr 45%;
     padding: 2em 4em;
-    margin-bottom: -1.5em;
+
+    // margin-bottom: -1.5em;
 
     @media (max-width: 930px) {
       grid-template-columns: 1fr 34%;
